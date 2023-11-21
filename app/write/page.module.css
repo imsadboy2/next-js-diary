@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
+
+
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+  font-family: 'Grandiflora One', cursive;
+}
+
+
+.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.addtitle {
+  font-size: 15px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+.titleinput {
+  vertical-align: top;
+}
+
+.second {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.emojiinner {
+  display: flex;
+}
+.emoji {
+  margin-right: 8px;
+  font-size: 25px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.emoji:hover {
+ transform: scale(1.2) rotate(360deg);
+}
+.feelingtitle {
+  font-size: 15px;
+  margin-bottom: 30px;
+  vertical-align: middle;
+}
+
+.third {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.weathertitle {
+  font-size: 15px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+.weather{
+  font-size: 50px;
+}
+.weather:hover {
+  animation: doridori 2s infinite normal;
+  animation-timing-function: step-end;
+}
+
+@keyframes doridori {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(20deg);
+  }
+
+  50% {
+    transform: rotate(-0deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+
+}
+
+.fourth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  position: relative;
+}
+
+.contenttitle {
+  font-size: 15px;
+  margin-bottom: 20px;
+  vertical-align: middle;
+}
+
+.publicinput {
+  outline-color: rgba(86, 86, 86, 0.629);
+  border-radius: 5px;
+  border: 1px solid #565656a7;
+  height: 20px;
+}
+
+.content {
+  width: 500px;
+  height: 250px;
+  resize: none;
+  padding: 3px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.submitbtn {
+  cursor: pointer;
+  font-family: 'Grandiflora One', cursive;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  right: 5px;
+  top: 305px;
+  transition: all 0.15s;
+}
+.submitbtn:hover {
+  transform: scale(1.15);
+}

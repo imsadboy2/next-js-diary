@@ -7,14 +7,45 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-top: 60px;
-  font-family: 'Grandiflora One', cursive;
+  
 }
 
+.mainmenu {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top:80px;
+  left:-300px;
+  width: 300px;
+  height: 100%;
+  transition: all 0.5s ;
+}
+.mainmenu.open {
+  left: 0;
+}
+
+.inmenu {
+  margin-top: 60px;
+  margin-left: 25px;
+}
+
+.menulist {
+  width: 70%;
+  font-family: 'Grandiflora One', cursive;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  background-color: red;
+}
+.menulist:hover {
+  transform: scale(1.1);
+  transform-origin: 0px 0px;
+}
 
 
 .article {
   font-size: 15px;
+  font-family: 'Grandiflora One', cursive;
   margin-bottom: 20px;
   cursor: pointer;
   transition: all 0.2s;
@@ -32,6 +63,7 @@
 
 .articletitle {
   font-size: 20px;
+  font-family: 'Grandiflora One', cursive;
   margin-bottom: 60px;
   cursor: pointer;
   transition: all 0.2s;
@@ -55,3 +87,22 @@
   color: rgba(35, 35, 35, 0.834);
   transform: scale(1.3);
 }
+.bars {
+  cursor: pointer;
+  position: fixed;
+  top: 100px;
+  left: 30px;
+  color: rgba(27, 27, 27, 0.639);
+  transition: all 0.5s;
+  
+}
+
+.bars:hover{
+  color: rgba(35, 35, 35, 0.834);
+  transform: scale(1.3);
+}
+
+.bars.open {
+  left: 200px;
+}
+
