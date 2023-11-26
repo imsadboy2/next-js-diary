@@ -8,9 +8,11 @@ import Link from 'next/link';
 export default function Sidemenu() {
   const [mainbars,setMainbars] = useState(false);
   return (
-    <div className={styles.articleinner}>
+    <div className={styles.menuinner}>
       <div className={`${styles.mainmenu} ${mainbars? styles.open : ''}`}>
         <ul className={styles.inmenu}>
+          <li className={styles.menulist}>My Page</li>
+          <li className={styles.menulist}>My Page</li>
           <li className={styles.menulist}>My Page</li>
           <li className={styles.menulist}>My Page</li>
         </ul>

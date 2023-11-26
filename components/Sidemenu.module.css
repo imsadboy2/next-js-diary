@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
 
 
-.articleinner {
+.menuinner {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
-  
+  z-index: 1;
 }
 
 .mainmenu {
@@ -33,60 +33,14 @@
   width: 70%;
   font-family: 'Grandiflora One', cursive;
   margin-bottom: 10px;
-  cursor: pointer;
   transition: all 0.3s;
-  background-color: red;
+  cursor: pointer;
 }
 .menulist:hover {
   transform: scale(1.1);
   transform-origin: 0px 0px;
 }
 
-
-.article {
-  font-size: 15px;
-  font-family: 'Grandiflora One', cursive;
-  margin-bottom: 20px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-.article:hover {
- transform: scale(1.05);
-}
-.article::after {
-  width: 500px;
-  content: "";
-  display: block;
-  border-top: 0.5px solid rgba(27, 27, 27, 0.403);
-  margin-top: 10px;
-}
-
-.articletitle {
-  font-size: 20px;
-  font-family: 'Grandiflora One', cursive;
-  margin-bottom: 60px;
-  cursor: pointer;
-  transition: all 0.2s;
-}
-
-.articletitle:hover {
-  transform: scale(1.05);
-}
-
-.pencil {
-  cursor: pointer;
-  position: fixed;
-  bottom: 50px;
-  right: 50px;
-  color: rgba(27, 27, 27, 0.639);
-  transition: all 0.5s;
-  
-}
-
-.pencil:hover{
-  color: rgba(35, 35, 35, 0.834);
-  transform: scale(1.3);
-}
 .bars {
   cursor: pointer;
   position: fixed;
@@ -96,12 +50,10 @@
   transition: all 0.5s;
   
 }
-
 .bars:hover{
   color: rgba(35, 35, 35, 0.834);
   transform: scale(1.3);
 }
-
 .bars.open {
   left: 200px;
 }

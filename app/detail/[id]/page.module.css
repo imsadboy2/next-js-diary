@@ -2,6 +2,8 @@
 
 
 .inner {
+  position: relative;
+  top: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,6 +12,23 @@
   font-family: 'Grandiflora One', cursive;
 }
 
+
+.dateinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.datetitle {
+  font-size: 15px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+.articledate {
+  font-size: 15px;
+  vertical-align: middle;
+}
 
 .first {
   display: flex;
@@ -44,7 +63,6 @@
   display: flex;
 }
 .emoji {
-  margin-right: 8px;
   font-size: 25px;
   cursor: pointer;
   transition: all 0.5s;
@@ -72,11 +90,10 @@
 }
 .weather{
   font-size: 50px;
-}
-.weather:hover {
   animation: doridori 2s infinite normal;
   animation-timing-function: step-end;
 }
+
 
 @keyframes doridori {
   0% {
@@ -126,10 +143,23 @@
   letter-spacing: 1.3px;
   line-height: 1.1;
 }
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+.content::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 1.5px solid transparent;
+}
+.content::-webkit-scrollbar-track {
+  background-color: rgba(224, 224, 224, 0.811);
+  border-radius: 10px;
+}
 .contentinner {
   width: 500px;
   height: 250px;
-  margin-bottom: 70px;
+  margin-bottom: 50px;
 }
 
 .addcommentinner {
@@ -159,8 +189,15 @@
 .addcmtbtn  {
   position: relative;
   left: 270px;
-  cursor: pointer;
   margin-bottom: 30px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'Grandiflora One', cursive;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.483);
+  text-align: center;
+  vertical-align: middle;
 }
 
 .exsitedcmt {
@@ -171,12 +208,32 @@
   justify-content: flex-start;
 }
 .excomment {
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   white-space: pre-wrap;
   letter-spacing: 1.3px;
   line-height: 1.1;
 }
 .excmtwriter {
-
   margin-left: 70px; 
+}
+
+.modifyinner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  width: 515px;
+  margin-left: 19px;
+  top: -10px;
+}
+.modifyp{
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'Grandiflora One', cursive;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.483);
+  text-align: center;
+  vertical-align: middle;
 }
