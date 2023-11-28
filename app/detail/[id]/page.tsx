@@ -2,11 +2,20 @@ import { connectDB } from '@/util/database'
 import styles from './page.module.css'
 import { ObjectId } from 'mongodb'
 import Link from 'next/link'
+import Delbtn from '@/components/Delbtn'
+import { getServerSession } from 'next-auth'
+import { authOptions } from '@/pages/api/auth/[...nextauth]'
+import Modybtn from '@/components/Modybtn'
 
 export default async function Detail(props: any) {
+  const session = await getServerSession(authOptions)
+
+  const curuser = session?.user?.email
+
   let db = (await connectDB).db('forum')
   let result = await db.collection('post').findOne({ _id: new ObjectId(props.params.id) })
-  console.log(result)
+
+
   function chooseweather(weather: string) {
     switch (weather) {
       case 'Thunderstorm':
@@ -61,12 +70,15 @@ export default async function Detail(props: any) {
           </p>
         </div>
       </div>
-      <div className={styles.modifyinner}>
-        <Link href={`/edit/${result?._id}`}>
-          <button className={styles.modifyp}>✎ 수정</button>
-        </Link>
-        <button className={styles.modifyp}>삭제 ⌫</button>
-      </div>
+      {
+        curuser == result?.writer ?
+        <div className={styles.modifyinner}>
+          <Modybtn result = {result as any} curuser = {curuser} />
+          <Delbtn _id={(result as any)?._id} curuser = {curuser} result = {result as any}/>
+        </div>
+        :
+        null
+      }
       <div className={styles.addcommentinner}>
         <p className={styles.addcmtwriter}>댓글 작성자</p>
         <textarea className={styles.addcomment}></textarea>

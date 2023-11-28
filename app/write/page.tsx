@@ -1,12 +1,19 @@
 'use client'
-import { ChangeEvent, useEffect, useState } from 'react'
+import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import styles from './page.module.css'
 import axios from 'axios'
 import Image from 'next/image'
+import { useSession } from 'next-auth/react'
 
 
 export default function Write() {
   
+  const session = useSession();
+
+  let lat:number = 0
+  let lon:number = 0
+  
+  const [writer, setWriter] = useState('')
   const [lenTitle, setLenTitle] = useState('')
   const [lenContent, setLenContent] = useState('')
   const [weather, setWeather] = useState('')
@@ -15,17 +22,38 @@ export default function Write() {
   const apiKey = 'b351af10b00131f919055611a5849d9c';
   const city = 'Seoul'
   const country = 'KR'
-  const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}`;
+  // const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}`;
 
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+         lat = position.coords.latitude;
+         lon = position.coords.longitude;
+      },
+      (error) => {
+        lat = 36.5194;
+        lon = 127.5050;
+      }
+    );
+  } else {
+    console.error("Geolocation이 지원되지 않습니다.");
+  }
+  
   useEffect(()=>{
-    axios.get(apiUrl)
+
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
     .then((res) => {
-      console.log(res.data.weather[0].main)
       setWeather(res.data.weather[0].main)
     }).catch((e)=>{
       console.log(e)
     })
-  },[])
+
+
+    if(session) {
+      setWriter(session.data?.user?.email || "")
+     }
+
+  },[session])
 
 
   const handleEmojiClick = (emoji:string) => {
@@ -83,7 +111,16 @@ export default function Write() {
     } else {
       setLenContent(inputValue)
     }
+
   }
+
+function empcon (e: any) {
+  if(lenTitle == '' || lenContent == '' || feeling == ''){
+    alert("제목, 내용, 기분은 비워두실수 없습니다.")
+    e.preventDefault()
+  }
+}
+
 
 
 const currentDate = new Date();
@@ -100,11 +137,14 @@ const millisecond = currentDate.getMilliseconds();
 const writedate = (`${year}-${month}-${day} ${hours}:${minutes}`);
 const srtfordate = (`${year}-${month}-${day} ${hours}:${minutes}:${second}:${millisecond}`);
 
+
+
   return (
     <div className={styles.inner}>
-      <form action="/api/write" method='post'>
+      <form action="/api/write" method='post' onSubmit={(e)=>{empcon(e)}}>
         <input name='feeling' value={feeling} onChange={(e) => setFeeling(e.target.value)} style={{display: 'none'}}/>
         <input name='weather' defaultValue={weather}  style={{display: 'none'}}/>
+        <input name='writer' defaultValue={writer}  style={{display: 'none'}}/>
         <input name='writedate' defaultValue={writedate}  style={{display: 'none'}}/>
         <input name='srtfordate' defaultValue={new Date(srtfordate).getTime()}  style={{display: 'none'}}/>
         <div className={styles.first}>

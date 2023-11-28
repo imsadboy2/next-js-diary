@@ -8,9 +8,9 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'openweathermap.org',
+        hostname: 'www.pngwing.com',
         port: '',
-        pathname: '/img/**',
+        pathname: '/ko/free-png-byvir',
       },
     ],
   },

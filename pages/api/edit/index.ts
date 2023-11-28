@@ -5,6 +5,7 @@ import { NextApiRequest, NextApiResponse } from 'next';
 
 
 export default async function handler (req:NextApiRequest, res:NextApiResponse) {
+  
   if(req.method == 'POST') {
     if(req.body.title == '' || req.body.content == '' || req.body.feeling == ''){
       return res.status(400).json("제목, 내용, 기분 빈 곳이 있는지 확인해주세요")

@@ -61,3 +61,8 @@
   color: rgba(35, 35, 35, 0.834);
   transform: scale(1.3);
 }
+
+.username {
+  position: fixed;
+  right: 10px;
+}

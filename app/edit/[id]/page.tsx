@@ -18,7 +18,7 @@ export default function Edit(props: any) {
   }
 
   useEffect(() => {
-    axios.get('/api/temp',{params})
+    axios.get('/api/edit',{params})
     .then((res)=>{
       setResult(res.data)
     })
@@ -115,7 +115,6 @@ export default function Edit(props: any) {
         </div>
         <div className={styles.modifyinner}>
           <button type='submit' className={styles.modifyp}>✎ 수정완료</button>
-          {/* <button className={styles.modifyp}>삭제 ⌫</button> */}
           <Delbtn _id={(result as any)?._id}/>
         </div>
         <div className={styles.addcommentinner}>
