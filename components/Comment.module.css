@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
+
+.addcommentinner {
+  position: relative;
+  display: flex;
+  width: 900px;
+  justify-content: flex-start;
+  left: -12px;
+}
+.addcomment {
+  resize: none;
+  width: 513px;
+  height: 100px;
+  margin-bottom: 10px;
+  outline-color: rgba(86, 86, 86, 0.629);
+  border-radius: 5px;
+  border: 1px solid #565656a7;
+  padding: 10px;
+  font-family: 'Grandiflora One', cursive;
+  letter-spacing: 1.3px;
+  line-height: 1.1;
+}
+.addcmtwriter {
+  margin-right: 16px;
+  width: 179px;
+  overflow-wrap: break-word;
+  text-align: right;
+}
+
+.addcmtbtn  {
+  position: relative;
+  left: 671px;
+  margin-bottom: 30px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'Grandiflora One', cursive;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.483);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.exsitedcmt {
+  position: relative;
+  display: grid;
+  grid-template-columns: 0.5fr 2.5fr 0.3fr 0.3fr;
+  width: 900px;
+  justify-content: flex-start;
+  left: -23px;
+}
+.excomment {
+  margin-bottom: 40px;
+  margin-left: 10px;
+  text-wrap: pretty;
+  letter-spacing: 1.3px;
+  line-height: 1.1;
+  text-align: left;
+  overflow-wrap: break-word;
+  width: 536px;
+}
+.excmtwriter {
+  margin-right: 16px;
+  width: 179px;
+  overflow-wrap: break-word;
+  text-align: right;
+}
+
+.modicmt{
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'Grandiflora One', cursive;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.483);
+  text-align: center;
+  vertical-align: middle;
+  width: 58px;
+  height: 26px;
+}
+.delcmt {
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'Grandiflora One', cursive;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.483);
+  text-align: center;
+  vertical-align: middle;
+  width: 60px;
+  height: 26px;
+}

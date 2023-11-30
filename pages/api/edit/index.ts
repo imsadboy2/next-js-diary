@@ -17,7 +17,7 @@ export default async function handler (req:NextApiRequest, res:NextApiResponse) 
         {_id : new ObjectId(req.body._id)},
         { $set: changedata}
       );
-      res.redirect(302,'/')
+      return res.redirect(302,'/')
     } catch (e){
       return res.status(500).json("서버가 불안정 합니다. 잠시 후 다시 시도해주세요" + e)
     }

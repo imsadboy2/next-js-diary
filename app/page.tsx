@@ -21,7 +21,7 @@ export default async function Home() {
   let copy = [...result]
   let revers = copy.sort((a,b)=> b.srtfordate - a.srtfordate)
 
-  console.log(session)
+
   return (
     <div className={styles.articleinner}>
       {

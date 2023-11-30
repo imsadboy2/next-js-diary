@@ -16,6 +16,7 @@ export default function Delbtn(props:any) {
           method:'DELETE',
           body: props._id
         }).then((result)=>{
+          alert('게시물 삭제가 완료 되었습니다.')
           router.push('/')
         }).then(()=>{
           router.refresh()
@@ -24,10 +25,6 @@ export default function Delbtn(props:any) {
         e.preventDefault()
         alert("글 수정, 삭제는 본인만이 가능합니다.")
       }
-
-
-
-
 
      }} className={styles.modifyp}>삭제 ⌫</button>
     </div>

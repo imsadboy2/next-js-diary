@@ -9,9 +9,18 @@ import { useEffect, useState, ChangeEvent } from 'react'
 import axios from 'axios'
 
 export default function Edit(props: any) {
-
+  
 
   const [result, setResult] = useState()
+
+  const [feeling, setFeeling] = useState('');
+
+  useEffect(() => {
+    if (result) {
+      setFeeling((result as any)?.feeling || ''); // 기본값이 null 또는 undefined일 때 빈 문자열로 설정
+    }
+  }, [result]);
+  
 
   const params = {
     _id : props.params.id
@@ -75,6 +84,7 @@ export default function Edit(props: any) {
       setLenContent(inputValue)
     }
   }
+
   
 
   return (
@@ -91,7 +101,7 @@ export default function Edit(props: any) {
         </div>
         <div className={styles.second}>
           <p className={styles.feelingtitle}>이날의 기분</p>
-          <select className={styles.choosefeel} id='feeling' name='feeling' defaultValue={(result as any)?.feeling}>
+          <select className={styles.choosefeel} id='feeling' name='feeling' value={feeling} onChange={(e) => setFeeling(e.target.value)}>
             <option value="🤬">🤬</option>
             <option value="😭">😭</option>
             <option value="🤕">🤕</option>
@@ -101,7 +111,6 @@ export default function Edit(props: any) {
             <option value="🥰">🥰</option>
             <option value="🤩">🤩</option>
           </select>
-          {/* <Feeling exfeel = {result?.feeling} articleId = {props.params.id}/> */}
         </div>
         <div className={styles.third}>
           <p className={styles.weathertitle}>이날의 날씨는</p>
@@ -116,21 +125,6 @@ export default function Edit(props: any) {
         <div className={styles.modifyinner}>
           <button type='submit' className={styles.modifyp}>✎ 수정완료</button>
           <Delbtn _id={(result as any)?._id}/>
-        </div>
-        <div className={styles.addcommentinner}>
-          <p className={styles.addcmtwriter}>댓글 작성자</p>
-          <textarea className={styles.addcomment}></textarea>
-        </div>
-        <button className={styles.addcmtbtn}>작성</button>
-        <div className={styles.exsitedcmt}>
-          <p className={styles.excmtwriter}>댓글 작성자</p>
-          <p className={styles.excomment}>
-            cwegwfwqsqxwq
-            cwegwfwqsqxwq
-            cwegwfwqsqxwq
-            cwegwfwqsqxwq
-            cwegwfwqsqxwq
-          </p>
         </div>
       </form>
     </div>
