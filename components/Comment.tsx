@@ -48,8 +48,6 @@ export default function Comment(props: any) {
   }
 
 
-  console.log(comment)
-  console.log(comment !== '')
   return (
     <div>
       {

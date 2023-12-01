@@ -61,7 +61,7 @@ export default async function handler (req:NextApiRequest, res:NextApiResponse) 
     if(req.method == 'DELETE') {
       
       req.body = JSON.parse(req.body)
-      console.log(req.body)
+
 
       try{
         const db = (await connectDB).db('forum')

@@ -9,49 +9,55 @@ import { useSession } from 'next-auth/react'
 export default function Write() {
   
   const session = useSession();
-
-  let lat:number = 0
-  let lon:number = 0
   
   const [writer, setWriter] = useState('')
   const [lenTitle, setLenTitle] = useState('')
   const [lenContent, setLenContent] = useState('')
   const [weather, setWeather] = useState('')
   const [feeling, setFeeling] = useState('')
+  const [lat, setLat] = useState<any>(36.5194)
+  const [lon, setLon] = useState<any>(127.5050)
 
   const apiKey = 'b351af10b00131f919055611a5849d9c';
   const city = 'Seoul'
   const country = 'KR'
   // const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}`;
 
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-         lat = position.coords.latitude;
-         lon = position.coords.longitude;
-      },
-      (error) => {
-        lat = 36.5194;
-        lon = 127.5050;
-      }
-    );
-  } else {
-    console.error("Geolocation이 지원되지 않습니다.");
-  }
-  
   useEffect(()=>{
 
-    axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`)
-    .then((res) => {
-      setWeather(res.data.weather[0].main)
-    }).catch((e)=>{
-      console.log(e)
-    })
+    const fetchData = async () => {
+      try {
+        const position = await new Promise<GeolocationPosition>((resolve, reject) => {
+          navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
 
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}`
+        );
 
-    if(session) {
-      setWriter(session.data?.user?.email || "")
-     }
+        setWeather(response.data.weather[0].main);
+      } catch (error) {
+        console.error(error + '위치정보를 가져올 수 없습니다. 위치 설정과 페이지의 위치 권한을 확인해주세요');
+
+        const response = await axios.get(
+          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
+        );
+        
+
+        setWeather(response.data.weather[0].main);
+        
+      }
+    };
+
+    if (navigator.geolocation) {
+      fetchData();
+    } else {
+      console.error('Geolocation이 지원되지 않습니다.');
+    }
+
+    if (session) {
+      setWriter(session.data?.user?.email || '');
+    }
 
   },[session])
 

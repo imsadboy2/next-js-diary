@@ -21,7 +21,7 @@ export const authOptions = {
   pages: {
     signIn: "/signin"
   },
-  secret: 'qwer1234'
+  secret: process.env.SECRET
 };
 
 export default NextAuth(authOptions)

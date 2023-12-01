@@ -15,7 +15,7 @@ export default async function Detail(props: any) {
 
   let db = (await connectDB).db('forum')
   let result = await db.collection('post').findOne({ _id: new ObjectId(props.params.id) })
-  console.log(result?._id.toString())
+
 
   function chooseweather(weather: string) {
     switch (weather) {
