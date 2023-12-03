@@ -4,10 +4,16 @@ import styles from './page.module.css'
 import axios from 'axios'
 import Image from 'next/image'
 import { useSession } from 'next-auth/react'
+import type { PutBlobResult } from '@vercel/blob'
+import { initializeApp } from 'firebase/app'
+import { getStorage, ref, uploadBytes } from 'firebase/storage'
+import Imgupload from '@/components/Imgupload'
+import { useSelector } from 'react-redux'
+
 
 
 export default function Write() {
-  
+
   const session = useSession();
   
   const [writer, setWriter] = useState('')
@@ -151,6 +157,8 @@ const srtfordate = (`${year}-${month}-${day} ${hours}:${minutes}:${second}:${mil
         <input name='feeling' value={feeling} onChange={(e) => setFeeling(e.target.value)} style={{display: 'none'}}/>
         <input name='weather' defaultValue={weather}  style={{display: 'none'}}/>
         <input name='writer' defaultValue={writer}  style={{display: 'none'}}/>
+        
+        <input name='imgurl' defaultValue={useSelector((state:any)=>state.imgurl)}  style={{display: 'none'}}/>
         <input name='writedate' defaultValue={writedate}  style={{display: 'none'}}/>
         <input name='srtfordate' defaultValue={new Date(srtfordate).getTime()}  style={{display: 'none'}}/>
         <div className={styles.first}>
@@ -221,6 +229,8 @@ const srtfordate = (`${year}-${month}-${day} ${hours}:${minutes}:${second}:${mil
           <button className={styles.submitbtn} type='submit'>저장</button>
         </div>
       </form>
+      <Imgupload/>
+
     </div>
   )
 }

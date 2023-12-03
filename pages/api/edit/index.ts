@@ -11,7 +11,7 @@ export default async function handler (req:NextApiRequest, res:NextApiResponse) 
       return res.status(400).json("제목, 내용, 기분 빈 곳이 있는지 확인해주세요")
     }
     try {
-      let changedata = {title:req.body.title, feeling:req.body.feeling, content:req.body.content}
+      let changedata = {title:req.body.title, feeling:req.body.feeling, content:req.body.content, imgurl: req.body.imgurl}
       let db = (await connectDB).db('forum')
       let result = await db.collection('post').updateOne(
         {_id : new ObjectId(req.body._id)},

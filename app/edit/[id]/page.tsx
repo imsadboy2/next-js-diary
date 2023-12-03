@@ -7,17 +7,23 @@ import Feeling from '@/components/Feeling'
 import Delbtn from '@/components/Delbtn'
 import { useEffect, useState, ChangeEvent } from 'react'
 import axios from 'axios'
+import Imgupload from '@/components/Imgupload'
+import { useSelector } from 'react-redux'
 
 export default function Edit(props: any) {
+  const previmgurl = useSelector((state:any)=> state.imgurl)
   
 
-  const [result, setResult] = useState()
+  const [result, setResult] = useState<any>()
 
+  
   const [feeling, setFeeling] = useState('');
 
   useEffect(() => {
     if (result) {
-      setFeeling((result as any)?.feeling || ''); // 기본값이 null 또는 undefined일 때 빈 문자열로 설정
+      setFeeling((result as any)?.feeling || '');
+      setLenTitle((result as any)?.title|| '')
+      setLenContent((result as any)?.content|| '') // 기본값이 null 또는 undefined일 때 빈 문자열로 설정
     }
   }, [result]);
   
@@ -33,8 +39,8 @@ export default function Edit(props: any) {
     })
   },[])
 
-  const [lenTitle, setLenTitle] = useState((result as any)?.title)
-  const [lenContent, setLenContent] = useState((result as any)?.content)
+  const [lenTitle, setLenTitle] = useState('')
+  const [lenContent, setLenContent] = useState('')
 
   function chooseweather(weather: string) {
     switch (weather) {
@@ -91,13 +97,16 @@ export default function Edit(props: any) {
     <div className={styles.inner}>
       <form action="/api/edit" method='post'>
         <input name='_id' defaultValue={(result as any)?._id.toString()} style={{display: 'none'}}/>
+        <input name='imgurl' defaultValue={
+          previmgurl == '' ? (result as any)?.imgurl : previmgurl
+        } style={{display: 'none'}}/>
         <div className={styles.dateinner}>
           <p className={styles.datetitle}>이날의 날짜는</p>
           <p className={styles.articledate}> {(result as any)?.writedate}</p>
         </div>
         <div className={styles.first}>
           <p className={styles.addtitle}>이날의 제목</p>
-          <input onChange={handlelengthTitle} defaultValue={(result as any)?.title} name='title' className={`${styles.titleinput} ${styles.publicinput}`}/>
+          <input onChange={handlelengthTitle} value={lenTitle} name='title' className={`${styles.titleinput} ${styles.publicinput}`}/>
         </div>
         <div className={styles.second}>
           <p className={styles.feelingtitle}>이날의 기분</p>
@@ -118,15 +127,20 @@ export default function Edit(props: any) {
         </div>
         <div className={styles.fourth}>
           <p className={styles.contenttitle}>이날은 이런 하루를 보내셨군요.</p>
+          {
+          result?.imgurl == ''? null : <img className={styles.curimg} src={result?.imgurl} width={300}/>
+        }
           <div className={styles.contentinner}>
-          <textarea onChange={handlelengthContent} defaultValue={(result as any)?.content} name='content' className={`${styles.content} ${styles.publicinput}`}/>
+          <textarea onChange={handlelengthContent} value={lenContent} name='content' className={`${styles.content} ${styles.publicinput}`}/>
           </div>
         </div>
+
         <div className={styles.modifyinner}>
           <button type='submit' className={styles.modifyp}>✎ 수정완료</button>
           <Delbtn _id={(result as any)?._id}/>
         </div>
       </form>
+      <Imgupload previmgurl = {result?.imgurl}/>
     </div>
   )
 }

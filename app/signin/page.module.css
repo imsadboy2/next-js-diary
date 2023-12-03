@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
+
 .inner  {
   display:flex;
   flex-direction: column;
@@ -11,6 +13,7 @@
   height: 350px;
   margin: 0 auto;
   box-shadow: 2px 5px 15px 5px rgba(0, 0, 0, 0.1);;
+  font-family: 'Grandiflora One', cursive;
 }
 
 .btn {

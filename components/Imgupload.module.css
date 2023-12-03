@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
+
+.imginner{
+  display: flex;
+  flex-direction: column;
+}
+
+.imginput[type="file"] {
+  font-family: 'Grandiflora One', cursive;
+  font-size: 15px;
+  position: relative;
+  left: -105px;
+  top: 2px;
+}
+
+.imginput[type="file"]::file-selector-button{
+  font-size: 15px;
+  cursor: pointer;
+  font-family: 'Grandiflora One', cursive;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.483);
+}
+
+.curimg {
+  margin: 10px 0px;
+  position: relative;
+  left: -105px;
+}

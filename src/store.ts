@@ -1,11 +1,11 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 
-let feel = createSlice({
-  name: 'feel',
-  initialState : '기분없음',
+let imgurl = createSlice({
+  name: 'imgurl',
+  initialState : '',
   reducers: {
-    changeFeel(state, action){
+    changeimgurl(state, action){
       return action.payload
     }
   }
@@ -13,8 +13,8 @@ let feel = createSlice({
 
 export default configureStore({
   reducer: {
-    feel: feel.reducer
+    imgurl: imgurl.reducer
   }
 })
 
-export let {changeFeel} = feel.actions
+export let {changeimgurl} = imgurl.actions
