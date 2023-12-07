@@ -12,6 +12,10 @@
   font-family: 'Grandiflora One', cursive;
 }
 
+.content {
+  text-align: center;
+  line-height: 30px;
+}
 
 
 .article {

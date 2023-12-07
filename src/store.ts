@@ -22,12 +22,36 @@ let imgurl = createSlice({
   }
 })
 
+let searchdata = createSlice({
+  name: 'searchdata',
+  initialState : [],
+  reducers: {
+    changesearchdata(state, action){
+      return action.payload
+    }
+  }
+})
+
+let backurl = createSlice({
+  name: 'backurl',
+  initialState : '',
+  reducers: {
+    changebackurl(state, action){
+      return action.payload
+    }
+  }
+})
+
 export default configureStore({
   reducer: {
     feel: feel.reducer,
-    imgurl: imgurl.reducer
+    imgurl: imgurl.reducer,
+    searchdata: searchdata.reducer,
+    backurl: backurl.reducer
   }
 })
 
 export let {changeFeel} = feel.actions
 export let {changeimgurl} = imgurl.actions
+export let {changesearchdata} = searchdata.actions
+export let {changebackurl} = backurl.actions

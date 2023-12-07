@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
+
+.searchbar {
+  outline-color: rgba(86, 86, 86, 0.629);
+  border-radius: 5px;
+  border: 1px solid #565656a7;
+  height: 20px;
+  font-family: 'Grandiflora One', cursive;
+  margin-right: 5px;
+}
+
+.searchinner {
+  display: flex;
+  width: 300px;
+  justify-content: center;
+  align-items: center;
+}
+
+.searbtn{
+ vertical-align: top;
+ position: relative;
+ top: -2px;
+}

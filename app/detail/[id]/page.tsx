@@ -7,6 +7,9 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import Modybtn from '@/components/Modybtn'
 import Comment from '@/components/Comment'
+import Logout from '@/components/Logout'
+import Login from '@/components/Login'
+import { FaPencil } from 'react-icons/fa6'
 
 export default async function Detail(props: any) {
   const session = await getServerSession(authOptions)
@@ -45,6 +48,12 @@ export default async function Detail(props: any) {
 
   return (
     <div className={styles.inner}>
+      {
+        session ? <Logout /> : <Login />
+      }
+      <Link href={`${session ? '/write' : '/signin'}`}>
+        <FaPencil className={styles.pencil} size="25" />
+      </Link>
       <div className={styles.dateinner}>
         <p className={styles.datetitle}>이날의 날짜는</p>
         <p className={styles.articledate}> {result?.writedate}</p>
@@ -66,7 +75,7 @@ export default async function Detail(props: any) {
       <div className={styles.fourth}>
         <p className={styles.contenttitle}>이날은 이런 하루를 보내셨군요.</p>
         {
-          result?.imgurl == ''? null : <img className={styles.curimg} src={result?.imgurl} width={300}/>
+          result?.imgurl == '' ? null : <img className={styles.curimg} src={result?.imgurl} width={300} />
         }
         <div className={styles.contentinner}>
           <p className={styles.content}>
@@ -76,14 +85,14 @@ export default async function Detail(props: any) {
       </div>
       {
         curuser == result?.writer ?
-        <div className={styles.modifyinner}>
-          <Modybtn result = {result as any} curuser = {curuser} />
-          <Delbtn _id={(result as any)?._id} curuser = {curuser} result = {result as any}/>
-        </div>
-        :
-        null
+          <div className={styles.modifyinner}>
+            <Modybtn result={result as any} curuser={curuser} />
+            <Delbtn _id={(result as any)?._id} curuser={curuser} result={result as any} />
+          </div>
+          :
+          null
       }
-      <Comment _id = {result?._id.toString()}/>
+      <Comment _id={result?._id.toString()} />
 
 
     </div>

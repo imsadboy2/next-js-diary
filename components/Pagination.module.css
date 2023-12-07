@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
+
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+.title:hover {
+ transform: scale(1.05);
+}
+
+.title::after {
+  width: 105%;
+  content: "";
+  display: block;
+  border-top: 0.5px solid rgba(27, 27, 27, 0.403);
+  margin-top: 10px;
+  margin-left: -2.5%;
+  margin-right: -2.5%;
+
+}
+
+
+.btninner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.numbtn{
+  background-color: transparent;
+  border: none;
+  font-family: 'Grandiflora One', cursive;
+  font-size: 20px;
+  cursor: pointer;
+}
+.numbtn::after {
+  position: relative;
+  top: 3px;
+  content: "";
+  display: inline-block;
+  height: 20px;
+  width: 0.5px;
+  background-color: rgba(27, 27, 27, 0.403);
+  margin-left: 13px;
+}
+.numbtnlast {
+  background-color: transparent;
+  border: none;
+  font-family: 'Grandiflora One', cursive;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.nodata {
+  margin-bottom: 20px;
+}

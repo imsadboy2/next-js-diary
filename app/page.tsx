@@ -20,6 +20,7 @@ export default async function Home() {
   let result = await db.collection('post').find().toArray();
   let copy = [...result]
   let revers = copy.sort((a,b)=> b.srtfordate - a.srtfordate)
+  let last = revers.slice(0,10)
 
 
   return (
@@ -29,7 +30,7 @@ export default async function Home() {
       }
       <p className={styles.articletitle}>오늘의 이야기들</p>
       {
-        revers.map((e, i)=>{
+        last.map((e, i)=>{
           return(
             <Link key={i} href={`detail/${revers[i]._id}`}>
               <p className={styles.article}> {e.title} </p>

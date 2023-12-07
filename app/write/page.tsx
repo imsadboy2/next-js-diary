@@ -27,7 +27,8 @@ export default function Write() {
   const apiKey = 'b351af10b00131f919055611a5849d9c';
   const city = 'Seoul'
   const country = 'KR'
-  // const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiKey}`;
+
+  console.log(weather)
 
   useEffect(()=>{
 
@@ -90,15 +91,40 @@ export default function Write() {
       case 'Snow':
         return '🌨️'
         break;
-      case 'Atmosphere':
-        return '🌫️'
-        break;
       case 'Clear':
         return '☀️'
         break;
       case 'Clouds':
         return '☁️'
         break;
+      case 'Mist':
+        return '🌫️'
+        break;
+      case 'Smoke':
+        return '😷'
+        break;
+      case 'Haze':
+        return '🌫️'
+        break;
+      case 'Dust':
+        return '😷'
+        break;
+      case 'Fog':
+        return '😷'
+        break;
+      case 'Sand':
+        return '😷'
+        break;
+      case 'Ash':
+        return '😷'
+        break;
+      case 'Squall':
+        return '💨'
+        break;
+      case 'Tornado':
+        return '🌪️'
+        break;
+
     }
   }
 
@@ -157,7 +183,7 @@ const srtfordate = (`${year}-${month}-${day} ${hours}:${minutes}:${second}:${mil
         <input name='feeling' value={feeling} onChange={(e) => setFeeling(e.target.value)} style={{display: 'none'}}/>
         <input name='weather' defaultValue={weather}  style={{display: 'none'}}/>
         <input name='writer' defaultValue={writer}  style={{display: 'none'}}/>
-        
+
         <input name='imgurl' defaultValue={useSelector((state:any)=>state.imgurl)}  style={{display: 'none'}}/>
         <input name='writedate' defaultValue={writedate}  style={{display: 'none'}}/>
         <input name='srtfordate' defaultValue={new Date(srtfordate).getTime()}  style={{display: 'none'}}/>
