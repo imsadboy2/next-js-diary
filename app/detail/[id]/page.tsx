@@ -10,6 +10,7 @@ import Comment from '@/components/Comment'
 import Logout from '@/components/Logout'
 import Login from '@/components/Login'
 import { FaPencil } from 'react-icons/fa6'
+import Pencil from '@/components/Pencil'
 
 export default async function Detail(props: any) {
   const session = await getServerSession(authOptions)
@@ -18,6 +19,7 @@ export default async function Detail(props: any) {
 
   let db = (await connectDB).db('forum')
   let result = await db.collection('post').findOne({ _id: new ObjectId(props.params.id) })
+
 
 
   function chooseweather(weather: string) {
@@ -51,9 +53,7 @@ export default async function Detail(props: any) {
       {
         session ? <Logout /> : <Login />
       }
-      <Link href={`${session ? '/write' : '/signin'}`}>
-        <FaPencil className={styles.pencil} size="25" />
-      </Link>
+      <Pencil/>
       <div className={styles.dateinner}>
         <p className={styles.datetitle}>이날의 날짜는</p>
         <p className={styles.articledate}> {result?.writedate}</p>

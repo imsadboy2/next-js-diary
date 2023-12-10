@@ -73,3 +73,84 @@
   transform: scale(1.2);
 }
 
+@media screen and (max-width: 768px ){
+  .pencil {
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
+    color: rgba(27, 27, 27, 0.639);
+    transition: all 0.5s;
+    
+  }
+  
+  .pencil:hover{
+    color: rgba(35, 35, 35, 0.834);
+    transform: scale(1.3);
+  }
+  .ptitle {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .cnttitle{
+    font-size: 20px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .uemail{
+    font-size: 18px;
+    margin-bottom: 40px;
+  }
+  .pcontent {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .feelingcnt {
+    font-size: 25px;
+    display: block;
+    margin: 10px 10px;
+    text-align: center;
+  }
+  .myarticle {
+    font-size: 25px;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 8px;
+    transition: all 0.3s;
+    width: 38px;
+    height: 20px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bolder;
+    
+  }
+
+  .detailfeelcmt{
+    width: 95%;
+    text-align: center;
+    line-height: 23px;
+    word-wrap: break-word;
+  }
+  
+
+}
+
+@media screen and (max-width: 576px ){
+  .pencil {
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 30px;
+    color: rgba(27, 27, 27, 0.639);
+    transition: all 0.5s;
+    
+  }
+  
+  .pencil:hover{
+    color: rgba(35, 35, 35, 0.834);
+    transform: scale(1.3);
+  }
+}

@@ -27,14 +27,15 @@ export default async function Feelstat() {
     return arr.reduce((count, element) => (element === target ? count + 1 : count), 0)
   } //각기분의 횟수를 셀수 있는 함수
 
-  const anger = cutarr(feel, '🤬')
-  const sad = cutarr(feel, '😭')
-  const hurt = cutarr(feel, '🤕')
-  const menbung = cutarr(feel, '🤯')
-  const shy = cutarr(feel, '🫣')
-  const celeb = cutarr(feel, '🥳')
-  const love = cutarr(feel, '🥰')
-  const wish = cutarr(feel, '🤩')
+  const anger =  cutarr(feel, '🤬') / feel.length * 100
+  
+  const sad = cutarr(feel, '😭')  / feel.length * 100
+  const hurt = cutarr(feel, '🤕')  / feel.length * 100
+  const menbung = cutarr(feel, '🤯')  / feel.length * 100
+  const shy = cutarr(feel, '🫣')  / feel.length * 100
+  const celeb = cutarr(feel, '🥳')  / feel.length * 100
+  const love = cutarr(feel, '🥰')  / feel.length * 100
+  const wish = cutarr(feel, '🤩')  / feel.length * 100
 
   console.log(anger, sad, hurt, menbung, shy, celeb, love, wish)
 
@@ -42,49 +43,49 @@ export default async function Feelstat() {
     {
       "id": "🤬",
       "label": "🤬 분노",
-      "value": anger,
+      "value": anger.toFixed(1),
       "color": "hsl(89, 70%, 50%)"
     },
     {
       "id": "😭",
       "label": "😭 슬픔",
-      "value": sad,
+      "value": sad.toFixed(1),
       "color": "hsl(8, 70%, 50%)"
     },
     {
       "id": "🤕",
       "label": "🤕 아픔",
-      "value": hurt,
+      "value": hurt.toFixed(1),
       "color": "hsl(358, 70%, 50%)"
     },
     {
       "id": "🤯",
       "label": "🤯 불안",
-      "value": menbung,
+      "value": menbung.toFixed(1),
       "color": "hsl(155, 70%, 50%)"
     },
     {
       "id": "🫣",
       "label": "🫣 창피함",
-      "value": shy,
+      "value": shy.toFixed(1),
       "color": "hsl(235, 70%, 50%)"
     },
     {
       "id": "🥳",
       "label": "🥳 기쁨",
-      "value": celeb,
+      "value": celeb.toFixed(1),
       "color": "hsl(260, 70%, 50%)"
     },
     {
       "id": "🥰",
       "label": "🥰 사랑",
-      "value": love,
+      "value": love.toFixed(1),
       "color": "hsl(235, 70%, 50%)"
     },
     {
       "id": "🤩",
       "label": "🤩 소망",
-      "value": wish,
+      "value": wish.toFixed(1),
       "color": "hsl(235, 70%, 50%)"
     },
   ]

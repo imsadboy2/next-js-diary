@@ -69,3 +69,28 @@
   position: fixed;
   right: 10px;
 }
+
+@media screen and (max-width: 576px){
+  .content {
+    text-align: center;
+    line-height: 30px;
+    font-size: 13px;
+    width: 95%;
+  }
+  .articletitle {
+    font-size: 20px;
+    margin-bottom: 22px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .articleinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 45px;
+ 
+    font-family: 'Grandiflora One', cursive;
+  }
+}

@@ -14,14 +14,15 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  top:80px;
+  top:76px;
   left:-300px;
   width: 206px;
-  height: auto;
+  height: 206px;
   transition: all 0.5s ;
 }
 .mainmenu.open {
   left: 0;
+  height: 206px;
 }
 
 .inmenu {
@@ -66,4 +67,83 @@
   font-size: 20px;
   font-family: 'Grandiflora One', cursive;
 }
+
+
+@media screen and (max-width: 625px ){
+  .menuinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    color: aliceblue;
+    
+  }
+  
+  .mainmenu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top:76px;
+    left:-300px;
+    width: 206px;
+    height: 206px;
+    transition: all 0.5s ;
+    background-color: rgba(27, 27, 27, 0.896);
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+  }
+  .mainmenu.open {
+    left: 0;
+    width: 700px;
+    height: 206px;
+  }
+  
+  .inmenu {
+    margin-top: 43px;
+    margin-left: 25px;
+  }
+  
+  .menulist {
+    width: 20%;
+    font-family: 'Grandiflora One', cursive;
+    margin-bottom: 16px;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  
+  .bars {
+    cursor: pointer;
+    position: fixed;
+    top: 100px;
+    left: 30px;
+    color: rgba(27, 27, 27, 0.639);
+    transition: all 0.5s;
+    z-index: 5;
+    
+  }
+
+  .bars.open {
+    left: 155px;
+    color: aliceblue;
+  }
+  
+  .menutitle {
+    position: relative;
+    top: 21px;
+    left: 26px;
+    font-size: 20px;
+    font-family: 'Grandiflora One', cursive;
+  }
+}
+
+
+@media screen and (max-width: 567px) {
+  .kill{
+    display: none;
+  }
+}
+
 

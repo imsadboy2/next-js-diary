@@ -7,7 +7,7 @@ const Chart = ({ data /* see data tab */ }:any) => (
     <ResponsivePie
         
         data={data}
-        margin={{ top: 60, right: 100, bottom: 60, left: 100 }}
+        margin={{ top: 10, right: 10, bottom: 10, left: 10 }}
         sortByValue={true}
         innerRadius={0.1}
         padAngle={3}
@@ -22,7 +22,7 @@ const Chart = ({ data /* see data tab */ }:any) => (
         arcLinkLabelsDiagonalLength={20}
         arcLinkLabelsStraightLength={23}
         arcLinkLabelsColor={{ from: 'color' }}
-        arcLabel={e=>e.id+" ("+e.value+")"}
+        arcLabel={e=>e.id+" "+e.value+"%"}
         arcLabelsTextColor={{
             from: 'color',
             modifiers: [
@@ -32,7 +32,7 @@ const Chart = ({ data /* see data tab */ }:any) => (
                 ]
             ]
         }}
-        theme={{text: { fontSize : 15, fontFamily: 'Grandiflora One', fontWeight: 900}}}
+        theme={{text: { fontSize : 20, fontWeight: 900}}}
         legends={[
             {
                 anchor: 'bottom',

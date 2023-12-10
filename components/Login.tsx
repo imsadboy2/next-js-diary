@@ -1,21 +1,44 @@
 'use client'
-
-import { signIn, signOut } from "next-auth/react"
-import styles from './Login.module.css'
-import { FaArrowRightToBracket } from "react-icons/fa6"
-import { useDispatch } from "react-redux"
-import { changebackurl } from "@/src/store"
+import { signIn } from "next-auth/react";
+import { FaArrowRightToBracket } from "react-icons/fa6";
+import { useDispatch } from "react-redux";
+import { changebackurl } from "@/src/store";
+import { useEffect, useState } from "react";
+import styles from './Login.module.css';
 
 export default function Login() {
-  const dispatch = useDispatch()
-  return(
+  const [scrollY, setScrollY] = useState(0);
+  const dispatch = useDispatch();
+
+  const handleScroll = () => {
+    setScrollY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollY]);
+
+  // scrollY 값에 따라 opacity 계산
+  const maxScroll = 288;
+  const baseOpacity = 1;
+  const calculatedOpacity = Math.max(baseOpacity - scrollY / maxScroll, 0);
+
+  return (
     <div>
-      <button className={styles.login} onClick={() => { 
-        dispatch(changebackurl(window.location.href))
-        signIn()
-         }} > 
+      <button 
+        className={`${styles.login} ${scrollY >= maxScroll ? styles.kill : ''}`} 
+        style={{ opacity: calculatedOpacity }}
+        onClick={() => { 
+          dispatch(changebackurl(window.location.href));
+          signIn();
+        }}
+      >
         <FaArrowRightToBracket size='25'/>
       </button>
     </div>
-  )
+  );
 }

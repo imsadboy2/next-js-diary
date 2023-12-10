@@ -275,3 +275,40 @@
   border-radius: 10px;
   box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.217);
 }
+
+@media screen and (max-width: 768px) {
+  .content {
+    width: 340px;
+    height: 250px;
+    resize: none;
+    padding: 3px;
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  .modifyinner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    width: 337px;
+    top: -25px;
+  }
+  .contentinner {
+    width: 340px;
+    height: 250px;
+    margin-bottom: 50px;
+  }
+}
+
+@supports (-webkit-appearance: none) {
+  .choosefeel {
+    width: 70px;
+    height: 60px;
+    font-size: 30px;
+    cursor: pointer;
+    outline-color: rgba(86, 86, 86, 0.629);
+    border-radius: 5px;
+    border: 0.5px solid #565656a7;
+  }
+}

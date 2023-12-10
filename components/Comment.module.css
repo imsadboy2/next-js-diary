@@ -47,8 +47,11 @@
   grid-template-columns: 0.5fr 2.5fr 0.3fr 0.3fr;
   width: 900px;
   justify-content: flex-start;
-  left: -23px;
+  left: 4px;
+  border-bottom: 0.5px solid rgba(27, 27, 27, 0.403);
+  margin-bottom: 41px;
 }
+
 .excomment {
   margin-bottom: 40px;
   margin-left: 10px;
@@ -89,4 +92,198 @@
   vertical-align: middle;
   width: 60px;
   height: 26px;
+}
+
+@media screen and (max-width: 900px ){
+  .addcommentinner {
+    position: relative;
+    display: block;
+    width: 100%;
+    justify-content: flex-start;
+    left: 4px;
+  }
+  .addcomment {
+    resize: none;
+    width: 320px;
+    height: 54px;
+    margin-bottom: 10px;
+    outline-color: rgba(86, 86, 86, 0.629);
+    border-radius: 5px;
+    border: 1px solid #565656a7;
+    padding: 10px;
+    font-family: 'Grandiflora One', cursive;
+    letter-spacing: 1.3px;
+    line-height: 1.1;
+  }
+  .addcmtwriter {
+    width: 179px;
+    overflow-wrap: break-word;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .addcmtbtn  {
+    position: relative;
+    left: 306px;
+    margin-bottom: 30px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Grandiflora One', cursive;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.483);
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .exsitedcmt {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: flex-start;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .excomment {
+    margin-bottom: 20px;
+    margin-left: 0px;
+    text-wrap: pretty;
+    letter-spacing: 1.3px;
+    line-height: 1.1;
+    text-align: left;
+    overflow-wrap: break-word;
+    width: 349px;
+  }
+  .excmtwriter {
+    margin-right: 16px;
+    width: 179px;
+    overflow-wrap: break-word;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+  
+  .modicmt{
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Grandiflora One', cursive;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.483);
+    text-align: center;
+    vertical-align: middle;
+    width: 58px;
+    height: 26px;
+  }
+  .delcmt {
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Grandiflora One', cursive;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.483);
+    text-align: center;
+    vertical-align: middle;
+    width: 60px;
+    height: 26px;
+    position: relative;
+    top: -26px;
+    left:238px;
+  }
+  
+
+}
+
+@media screen and (max-width: 900px){
+  .addcommentinner {
+    position: relative;
+    display: block;
+    width: 100%;
+    justify-content: flex-start;
+    left: 1px;
+  }
+  .addcomment {
+    resize: none;
+    width: 301px;
+    height: 54px;
+    margin-bottom: 10px;
+    outline-color: rgba(86, 86, 86, 0.629);
+    border-radius: 5px;
+    border: 1px solid #565656a7;
+    padding: 10px;
+    font-family: 'Grandiflora One', cursive;
+    letter-spacing: 1.3px;
+    line-height: 1.1;
+  }
+  .addcmtwriter {
+    width: 179px;
+    overflow-wrap: break-word;
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .addcmtbtn  {
+    position: relative;
+    left: 283px;
+    margin-bottom: 30px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Grandiflora One', cursive;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.483);
+    text-align: center;
+    vertical-align: middle;
+  }
+  
+  .exsitedcmt {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    justify-content: flex-start;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .excomment {
+    margin-bottom: 20px;
+    margin-left: 0px;
+    text-wrap: pretty;
+    letter-spacing: 1.3px;
+    line-height: 1.1;
+    text-align: left;
+    overflow-wrap: break-word;
+    width: 349px;
+  }
+  .excmtwriter {
+    margin-right: 16px;
+    width: 179px;
+    overflow-wrap: break-word;
+    text-align: left;
+  }
+  
+  .modicmt{
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Grandiflora One', cursive;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.483);
+    text-align: center;
+    vertical-align: middle;
+    width: 58px;
+    height: 26px;
+  }
+  .delcmt {
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Grandiflora One', cursive;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.483);
+    text-align: center;
+    vertical-align: middle;
+    width: 60px;
+    height: 26px;
+  }
 }

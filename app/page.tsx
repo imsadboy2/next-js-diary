@@ -22,12 +22,11 @@ export default async function Home() {
   let revers = copy.sort((a,b)=> b.srtfordate - a.srtfordate)
   let last = revers.slice(0,10)
 
+  
+
 
   return (
     <div className={styles.articleinner}>
-      {
-        session? <Logout/>  : <Login/>
-      }
       <p className={styles.articletitle}>오늘의 이야기들</p>
       {
         last.map((e, i)=>{
@@ -37,6 +36,9 @@ export default async function Home() {
             </Link>
           )
         })
+      }
+      {
+        session? <Logout/>  : <Login/>
       }
       <Link  href={`${session? '/write' : '/signin'}`}>
        <FaPencil className={styles.pencil} size="25" />

@@ -164,11 +164,16 @@ function empcon (e: any) {
 const currentDate = new Date();
 
 const year = currentDate.getFullYear();
-const month = currentDate.getMonth() + 1; // 월은 0부터 시작하므로 1을 더함
-const day = currentDate.getDate();
-const hours = currentDate.getHours();
+const tempmonth = currentDate.getMonth() + 1; // 월은 0부터 시작하므로 1을 더함
+const tempday = currentDate.getDate();
+const temphours = currentDate.getHours();
 const tempminutes = currentDate.getMinutes();
+
+const month = tempmonth < 10 ? `0${tempmonth}`: tempmonth
+const day = tempday < 10 ? `0${tempday}`: tempday
+const hours = temphours < 10 ? `0${temphours}`: temphours
 const minutes = tempminutes < 10 ? `0${tempminutes}`: tempminutes
+
 const second = currentDate.getSeconds();
 const millisecond = currentDate.getMilliseconds();
 
@@ -255,7 +260,10 @@ const srtfordate = (`${year}-${month}-${day} ${hours}:${minutes}:${second}:${mil
           <button className={styles.submitbtn} type='submit'>저장</button>
         </div>
       </form>
-      <Imgupload/>
+      <div className={styles.writeimg}>
+        <Imgupload/>
+      </div>
+
 
     </div>
   )
