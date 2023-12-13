@@ -28,7 +28,7 @@ export default function Write() {
   const city = 'Seoul'
   const country = 'KR'
 
-  console.log(weather)
+
 
   useEffect(()=>{
 
@@ -224,10 +224,10 @@ const srtfordate = (`${year}-${month}-${day} ${hours}:${minutes}:${second}:${mil
               🤯
             </p>
             <p
-              className={`${styles.emoji} ${feeling === '🫣' ? styles.selected : ''}`}
-              onClick={() => handleEmojiClick('🫣')}
+              className={`${styles.emoji} ${feeling === '😳' ? styles.selected : ''}`}
+              onClick={() => handleEmojiClick('😳')}
             >
-              🫣
+              😳
             </p>
             <p
               className={`${styles.emoji} ${feeling === '🥳' ? styles.selected : ''}`}

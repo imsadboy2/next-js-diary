@@ -51,7 +51,7 @@ export default async function Detail(props: any) {
   return (
     <div className={styles.inner}>
       {
-        session ? <Logout /> : <Login />
+        session == undefined || null ? <Login />  :   <Logout />
       }
       <Pencil/>
       <div className={styles.dateinner}>
@@ -75,7 +75,7 @@ export default async function Detail(props: any) {
       <div className={styles.fourth}>
         <p className={styles.contenttitle}>이날은 이런 하루를 보내셨군요.</p>
         {
-          result?.imgurl == '' ? null : <img className={styles.curimg} src={result?.imgurl} width={300} />
+          result?.imgurl == '' ? null : <img className={styles.curimg} src={result?.imgurl}  />
         }
         <div className={styles.contentinner}>
           <p className={styles.content}>

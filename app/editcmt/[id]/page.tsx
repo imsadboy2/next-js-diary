@@ -98,6 +98,9 @@ export default function Editcmt(props: any) {
       </div>
       <div className={styles.fourth}>
         <p className={styles.contenttitle}>이날은 이런 하루를 보내셨군요.</p>
+        {
+         (result as any)?.imgurl == '' ? null : <img className={styles.curimg} src={(result as any)?.imgurl}  />
+        }
         <div className={styles.contentinner}>
           <p className={styles.content}>
           {(result as any)?.content}

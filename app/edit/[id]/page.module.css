@@ -20,11 +20,13 @@
   align-items: center;
   margin-top: 30px;
 }
+
 .datetitle {
   font-size: 15px;
   margin-bottom: 10px;
   vertical-align: middle;
 }
+
 .articledate {
   font-size: 15px;
   vertical-align: middle;
@@ -37,11 +39,13 @@
   align-items: center;
   margin-top: 30px;
 }
+
 .addtitle {
   font-size: 15px;
   margin-bottom: 10px;
   vertical-align: middle;
 }
+
 .articletitle {
   font-size: 15px;
   vertical-align: middle;
@@ -50,6 +54,10 @@
 
 .titleinput {
   vertical-align: top;
+  outline-color: rgba(86, 86, 86, 0.629);
+  border-radius: 5px;
+  border: 1px solid #565656a7;
+  font-family: 'Grandiflora One', cursive;
 }
 
 .second {
@@ -59,17 +67,21 @@
   align-items: center;
   margin-top: 30px;
 }
+
 .emojiinner {
   display: flex;
 }
+
 .emoji {
   font-size: 25px;
   cursor: pointer;
   transition: all 0.5s;
 }
+
 .emoji:hover {
- transform: scale(1.2) rotate(360deg);
+  transform: scale(1.2) rotate(360deg);
 }
+
 .feelingtitle {
   font-size: 15px;
   margin-bottom: 30px;
@@ -83,12 +95,14 @@
   align-items: center;
   margin-top: 30px;
 }
+
 .weathertitle {
   font-size: 15px;
   margin-bottom: 10px;
   vertical-align: middle;
 }
-.weather{
+
+.weather {
   font-size: 50px;
   animation: doridori 2s infinite normal;
   animation-timing-function: step-end;
@@ -107,9 +121,11 @@
   50% {
     transform: rotate(-0deg);
   }
+
   75% {
     transform: rotate(-20deg);
   }
+
   100% {
     transform: rotate(0deg);
   }
@@ -144,7 +160,12 @@
   line-height: 1.1;
   position: relative;
   right: 9px;
+  outline-color: rgba(86, 86, 86, 0.629);
+  border-radius: 5px;
+  border: 1px solid #565656a7;
+  font-family: 'Grandiflora One', cursive;
 }
+
 .contentinner {
   width: 500px;
   height: 250px;
@@ -157,6 +178,7 @@
   width: 900px;
   justify-content: flex-start;
 }
+
 .addcomment {
   resize: none;
   width: 550px;
@@ -170,12 +192,13 @@
   letter-spacing: 1.3px;
   line-height: 1.1;
 }
+
 .addcmtwriter {
   margin-right: 30px;
-  margin-left: 70px; 
+  margin-left: 70px;
 }
 
-.addcmtbtn  {
+.addcmtbtn {
   position: relative;
   left: 700px;
   margin-bottom: 30px;
@@ -196,14 +219,16 @@
   width: 900px;
   justify-content: flex-start;
 }
+
 .excomment {
   margin-bottom: 40px;
   white-space: pre-wrap;
   letter-spacing: 1.3px;
   line-height: 1.1;
 }
+
 .excmtwriter {
-  margin-left: 70px; 
+  margin-left: 70px;
 }
 
 .modifyinner {
@@ -215,7 +240,8 @@
   width: 515px;
   top: -25px;
 }
-.modifyp{
+
+.modifyp {
   font-size: 13px;
   cursor: pointer;
   font-family: 'Grandiflora One', cursive;
@@ -225,17 +251,10 @@
   text-align: center;
   vertical-align: middle;
 }
+
 .titleinput {
   vertical-align: top;
 }
-.publicinput {
-  outline-color: rgba(86, 86, 86, 0.629);
-  border-radius: 5px;
-  border: 1px solid #565656a7;
-  height: 20px;
-  font-family: 'Grandiflora One', cursive;
-}
-
 
 .content {
   width: 508px;
@@ -245,15 +264,18 @@
   margin-bottom: 10px;
   padding: 5px;
 }
+
 .content::-webkit-scrollbar {
   width: 8px;
 }
+
 .content::-webkit-scrollbar-thumb {
   background-color: #2f3542;
   border-radius: 10px;
   background-clip: padding-box;
   border: 1.5px solid transparent;
 }
+
 .content::-webkit-scrollbar-track {
   background-color: rgba(224, 224, 224, 0.811);
   border-radius: 10px;
@@ -261,7 +283,7 @@
 
 
 .choosefeel {
-  width: 50px;
+  width: 70px;
   height: 40px;
   font-size: 30px;
   cursor: pointer;
@@ -274,6 +296,7 @@
   margin-bottom: 30px;
   border-radius: 10px;
   box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.217);
+  width: 300px;
 }
 
 @media screen and (max-width: 768px) {
@@ -285,6 +308,7 @@
     margin-bottom: 10px;
     padding: 5px;
   }
+
   .modifyinner {
     display: flex;
     justify-content: space-between;
@@ -294,6 +318,7 @@
     width: 337px;
     top: -25px;
   }
+
   .contentinner {
     width: 340px;
     height: 250px;
@@ -301,14 +326,119 @@
   }
 }
 
-@supports (-webkit-appearance: none) {
-  .choosefeel {
-    width: 70px;
-    height: 60px;
-    font-size: 30px;
-    cursor: pointer;
+@media screen and (max-width: 576px) {
+
+}
+
+
+@media screen and (min-width:1450px) {
+  .inner {
+    position: relative;
+    top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    font-family: 'Grandiflora One', cursive;
+  }
+
+  .datetitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+  }
+
+  .articledate {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  .addtitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+  }
+
+  .titleinput {
+    vertical-align: top;
     outline-color: rgba(86, 86, 86, 0.629);
     border-radius: 5px;
-    border: 0.5px solid #565656a7;
+    border: 1px solid #565656a7;
+    height: 25px;
+    font-family: 'Grandiflora One', cursive;
+    font-size: 20px;
+  }
+
+  .feelingtitle {
+    font-size: 25px;
+    margin-bottom: 30px;
+    vertical-align: middle;
+  }
+
+  .weathertitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+  }
+
+  .weather {
+    font-size: 70px;
+    animation: doridori 2s infinite normal;
+    animation-timing-function: step-end;
+  }
+
+  .contenttitle {
+    font-size: 25px;
+    margin-bottom: 20px;
+    vertical-align: middle;
+  }
+
+  .content {
+    width: 550px;
+    height: 270px;
+    resize: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    overflow-y: scroll;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1.3px;
+    line-height: 1.1;
+    position: relative;
+    right: 35px;
+    vertical-align: top;
+    outline-color: rgba(86, 86, 86, 0.629);
+    border-radius: 5px;
+    border: 1px solid #565656a7;
+    font-family: 'Grandiflora One', cursive;
+    font-size: 20px;
+  }
+
+  .modifyinner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    width: 569px;
+    top: 6px;
+  }
+
+  .modifyp {
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Grandiflora One', cursive;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.483);
+    text-align: center;
+    vertical-align: middle;
+  }
+  .curimg {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.217);
+    width: 474px;
   }
 }

@@ -93,7 +93,9 @@ export default function Comment(props: any) {
                 <p className={styles.excomment}>{e.content}</p>
                 <Link style={{display: `${
                     session.data?.user?.email == e.author? 'block' : 'none'
-                  }`}} 
+                  }`,
+                  width: 60, height:30
+                }} 
                     href={{pathname:`/editcmt/${props._id}`,
                       query:{
                         cmtid: e._id
@@ -103,7 +105,8 @@ export default function Comment(props: any) {
                     className={styles.modicmt}
                     style={{display: `${
                     session.data?.user?.email == e.author? 'block' : 'none'
-                  }`}}
+                  }`
+                }}
                   >✎ 수정</button>
                 </Link>
 

@@ -9,8 +9,8 @@
   font-family: 'Grandiflora One', cursive;
   font-size: 15px;
   position: relative;
-  left: -105px;
-  top: 2px;
+  left: -95px;
+  top: -17px;
 }
 
 .imginput[type="file"]::file-selector-button{
@@ -25,20 +25,21 @@
 .curimg {
   margin: 10px 0px;
   position: relative;
-  left: -105px;
+  left: -95px;
 }
-@media screen and (max-width: 768px){
+
+@media screen and (max-width: 1024px){
   .imginput[type="file"] {
     font-family: 'Grandiflora One', cursive;
     font-size: 15px;
     position: relative;
-    left: -25px;
+    left: -97px;
     top: -16px;
   }
   .curimg {
     margin: -5px 0px;
     position: relative;
-    left: -27px;
+    left: -97px;
   }
 }
 
@@ -56,5 +57,31 @@
     margin: 10px 0px;
     position: relative;
     left: -65px;
+  }
+}
+
+
+@media screen and (min-width: 1450px) { 
+  .imginput[type="file"] {
+    font-family: 'Grandiflora One', cursive;
+    font-size: 20px;
+    position: relative;
+    left: -72px;
+    top: 2px;
+  }
+  
+  .imginput[type="file"]::file-selector-button{
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Grandiflora One', cursive;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.483);
+  }
+  .curimg {
+    margin: 10px 0px;
+    position: relative;
+    left: -72px;
+    width: 150px;
   }
 }

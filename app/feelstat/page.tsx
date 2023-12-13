@@ -17,7 +17,7 @@ export default async function Feelstat() {
 
   let db = (await connectDB).db('forum')
   let result = await db.collection('post').find().toArray()
-  console.log(result)
+
 
   const feel = result.map((e, i) => { //모든게시물의 기분만 빼서 배열에 저장하고?
     return e.feeling
@@ -32,12 +32,12 @@ export default async function Feelstat() {
   const sad = cutarr(feel, '😭')  / feel.length * 100
   const hurt = cutarr(feel, '🤕')  / feel.length * 100
   const menbung = cutarr(feel, '🤯')  / feel.length * 100
-  const shy = cutarr(feel, '🫣')  / feel.length * 100
+  const shy = cutarr(feel, '😳')  / feel.length * 100
   const celeb = cutarr(feel, '🥳')  / feel.length * 100
   const love = cutarr(feel, '🥰')  / feel.length * 100
   const wish = cutarr(feel, '🤩')  / feel.length * 100
 
-  console.log(anger, sad, hurt, menbung, shy, celeb, love, wish)
+
 
   const data = [
     {
@@ -65,8 +65,8 @@ export default async function Feelstat() {
       "color": "hsl(155, 70%, 50%)"
     },
     {
-      "id": "🫣",
-      "label": "🫣 창피함",
+      "id": "😳",
+      "label": "😳 창피함",
       "value": shy.toFixed(1),
       "color": "hsl(235, 70%, 50%)"
     },
@@ -95,7 +95,7 @@ export default async function Feelstat() {
       <div className={styles.inner}>
         <Chart data={data} />
         {
-          session ? <Logout /> : <Login />
+          session == undefined || null ? <Login />  :   <Logout />
         }
         <Link href={`${session ? '/write' : '/signin'}`}>
           <FaPencil className={styles.pencil} size="25" />

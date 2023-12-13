@@ -9,6 +9,7 @@ import styles from './Login.module.css';
 export default function Login() {
   const [scrollY, setScrollY] = useState(0);
   const dispatch = useDispatch();
+  const viewsize = window.innerWidth
 
   const handleScroll = () => {
     setScrollY(window.scrollY);
@@ -37,7 +38,9 @@ export default function Login() {
           signIn();
         }}
       >
-        <FaArrowRightToBracket size='25'/>
+        <FaArrowRightToBracket
+         size={viewsize >= 1450 ? '35' : '25'}
+         />
       </button>
     </div>
   );

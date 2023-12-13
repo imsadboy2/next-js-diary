@@ -28,6 +28,10 @@
 .titleinput {
   vertical-align: top;
   font-family: 'Grandiflora One', cursive;
+  outline-color: rgba(86, 86, 86, 0.629);
+  border-radius: 5px;
+  border: 1px solid #565656a7;
+  height: 20px;
 }
 
 .second {
@@ -119,12 +123,6 @@
   vertical-align: middle;
 }
 
-.publicinput {
-  outline-color: rgba(86, 86, 86, 0.629);
-  border-radius: 5px;
-  border: 1px solid #565656a7;
-  height: 20px;
-}
 
 .content {
   width: 500px;
@@ -134,6 +132,10 @@
   margin-bottom: 10px;
   padding: 5px;
   font-family: 'Grandiflora One', cursive;
+  outline-color: rgba(86, 86, 86, 0.629);
+  border-radius: 5px;
+  border: 1px solid #565656a7;
+
 }
 
 .submitbtn {
@@ -154,7 +156,10 @@
   transform: scale(1.15);
 }
 
-
+.writeimg {
+  position: relative;
+  top: 17px;
+}
 
 
 
@@ -193,6 +198,10 @@
   .titleinput {
     vertical-align: top;
     font-family: 'Grandiflora One', cursive;
+    outline-color: rgba(86, 86, 86, 0.629);
+    border-radius: 5px;
+    border: 1px solid #565656a7;
+    height: 20px;
   }
   
   .second {
@@ -284,13 +293,6 @@
     vertical-align: middle;
   }
   
-  .publicinput {
-    outline-color: rgba(86, 86, 86, 0.629);
-    border-radius: 5px;
-    border: 1px solid #565656a7;
-    height: 20px;
-  }
-  
   .content {
     width: 500px;
     height: 250px;
@@ -299,6 +301,10 @@
     margin-bottom: 10px;
     padding: 5px;
     font-family: 'Grandiflora One', cursive;
+    outline-color: rgba(86, 86, 86, 0.629);
+    border-radius: 5px;
+    border: 1px solid #565656a7;
+
   }
   
   .submitbtn {
@@ -334,10 +340,103 @@
     margin-bottom: 10px;
     padding: 5px;
     font-family: 'Grandiflora One', cursive;
+    outline-color: rgba(86, 86, 86, 0.629);
+    border-radius: 5px;
+    border: 1px solid #565656a7;
+
   }
   .writeimg{
     position: relative;
     left: 3px;
     top: 17px;
+  }
+}
+
+@media screen and (min-width: 1450px) { 
+  .inner {
+    display: flex;
+    position: relative;
+    top: 96px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    font-family: 'Grandiflora One', cursive;
+  }
+  
+  .addtitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+  }
+
+  .titleinput {
+    vertical-align: top;
+    font-family: 'Grandiflora One', cursive;
+    height: 25px;
+    width: 40%;
+    font-size: 20px;
+    outline-color: rgba(86, 86, 86, 0.629);
+    border-radius: 5px;
+    border: 1px solid #565656a7;
+
+  }
+  .feelingtitle {
+    font-size: 25px;
+    margin-bottom: 30px;
+    vertical-align: middle;
+  }
+  .emoji {
+    margin-right: 13px;
+    font-size: 35px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+  .weathertitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+  }
+  .weather{
+    font-size: 70px;
+    animation: doridori 2s infinite normal;
+    animation-timing-function: step-end;
+  }
+  .contenttitle {
+    font-size: 25px;
+    margin-bottom: 20px;
+    vertical-align: middle;
+  }
+  .content {
+    width: 550px;
+    height: 270px;
+    resize: none;
+    padding: 3px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-family: 'Grandiflora One', cursive;
+    font-size: 20px;
+    outline-color: rgba(86, 86, 86, 0.629);
+    border-radius: 5px;
+    border: 1px solid #565656a7;
+  }
+  .submitbtn {
+    position: absolute;
+    right: 5px;
+    top: 340px;
+    transition: all 0.15s;
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Grandiflora One', cursive;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.483);
+    text-align: center;
+    vertical-align: middle;
+    font-size: 20px;
+  }
+  .writeimg {
+    position: relative;
+    top:1px;
   }
 }

@@ -23,6 +23,8 @@ const Chart = ({ data /* see data tab */ }:any) => (
         arcLinkLabelsStraightLength={23}
         arcLinkLabelsColor={{ from: 'color' }}
         arcLabel={e=>e.id+" "+e.value+"%"}
+        arcLabelsSkipAngle={5}
+        arcLabelsRadiusOffset={0.6}
         arcLabelsTextColor={{
             from: 'color',
             modifiers: [

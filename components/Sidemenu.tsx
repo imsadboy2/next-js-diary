@@ -10,9 +10,11 @@ export default function Sidemenu() {
   const menuRef = useRef<any>(null);
   const session = useSession();
   const [scrollY, setScrollY] = useState(0);
+  const viewsize = window.innerWidth
+
 
   useEffect(() => {
-    const handleClickOutside = (e:MouseEvent) => {
+    const handleClickOutside = (e: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
         setMainbars(false);
       }
@@ -25,8 +27,8 @@ export default function Sidemenu() {
     };
   }, [mainbars]);
 
-  const handlemypage = (e:any) => {
-    if(session.data == undefined || null) {
+  const handlemypage = (e: any) => {
+    if (session.data == undefined || null) {
       e.preventDefault()
       alert('로그인 후에 마이페이지를 이용하실 수 있습니다.')
     }
@@ -34,7 +36,7 @@ export default function Sidemenu() {
 
 
 
-const handleScroll = () => {
+  const handleScroll = () => {
     setScrollY(window.scrollY);
   };
   useEffect(() => {
@@ -53,36 +55,51 @@ const handleScroll = () => {
       <div className={`${styles.mainmenu} ${mainbars ? styles.open : ''} `} ref={menuRef}>
         <p className={styles.menutitle}>- MENU -</p>
         <ul className={styles.inmenu}>
-          <Link href={'/mypage/'+ session.data?.user?.email}>
-            <li 
-            onClick={(e) => {
-              handlemypage(e)
-              setMainbars(!mainbars)
-            } }
-            className={styles.menulist}>My Page</li>
-          </Link>
-         <Link href={'/allpost'}>
-          <li 
-          onClick={() => setMainbars(!mainbars)}
-          className={styles.menulist}>전체 글보기</li>
-          </Link>
-          <Link href={'/feelstat'}>
-            <li 
+          <li className={styles.menulist}>
+            <Link 
+             onClick={(e) => {
+             handlemypage(e)
+             setMainbars(!mainbars)
+             }}
+            href={'/mypage/' + session.data?.user?.email}>
+              My Page
+            </Link>
+          </li>
+
+
+          <li className={styles.menulist}>
+            <Link
+               onClick={() => setMainbars(!mainbars)}
+            href={'/allpost'}>
+              전체 글보기
+            </Link>
+          </li>
+
+
+          <li className={styles.menulist}>
+            <Link 
             onClick={() => setMainbars(!mainbars)}
-            className={styles.menulist}>기분별 일기 현황</li>
-          </Link>
-          <Link href={'/about'}>
-            <li 
+            href={'/feelstat'}>
+              기분별 일기 현황
+            </Link>
+          </li>
+
+
+          <li className={styles.menulist}>
+            <Link 
             onClick={() => setMainbars(!mainbars)}
-            className={styles.menulist}>about</li>
-          </Link>
+            href={'/about'}>
+              about
+            </Link>
+          </li>
+
         </ul>
       </div>
       <FaBars
         onClick={() => setMainbars(!mainbars)}
         style={{ opacity: calculatedOpacity }}
         className={`${styles.bars} ${mainbars ? styles.open : ''} ${scrollY >= maxScroll ? styles.kill : ''}`}
-        size='25'
+        size={viewsize >= 1450 ? '35' : '25'}
       />
     </div>
   );

@@ -8,3 +8,15 @@
   text-align: center;
   vertical-align: middle;
 }
+@media screen and (min-width: 1450px) {
+  .modifyp{
+    font-size: 20px;
+    cursor: pointer;
+    font-family: 'Grandiflora One', cursive;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.483);
+    text-align: center;
+    vertical-align: middle;
+  }
+}

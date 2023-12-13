@@ -58,3 +58,21 @@
     display: none;
   }
   }
+  @media screen and (min-width: 1450px) {
+    .login {
+      z-index: 1;
+      border: none;
+      position: fixed;
+      background-color: transparent;
+      cursor: pointer;
+      top: 132px;
+      right: 30px;
+      color: rgba(27, 27, 27, 0.639);
+      transition: all 0.5s;
+    }
+    .login:hover {
+        color: rgba(35, 35, 35, 0.834);
+        transform: scale(1.3);
+      
+    }
+  }

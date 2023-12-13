@@ -7,10 +7,12 @@ import Login from '@/components/Login'
 import { FaPencil } from 'react-icons/fa6'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
+import Pencil from '@/components/Pencil'
 
 
 export default async function Mypage(props: any) {
   const usermail = decodeURIComponent(props.params.email)
+
   let session = await getServerSession(authOptions)
 
   let db = (await connectDB).db('forum')
@@ -61,7 +63,7 @@ export default async function Mypage(props: any) {
       case '🤯':
         return ('당신 일기 감정의 대부분은 "불안" 입니다.')
         break;
-      case '🫣':
+      case '😳':
         return ('당신 일기 감정의 대부분은 "창피" 입니다.')
         break;
       case '🥳':
@@ -95,7 +97,7 @@ export default async function Mypage(props: any) {
         return <p className={styles.detailfeelcmt} >불안에 관한 명언은 <br /><br />&quot;불안은 미래에 대한 믿음을 훔치고, 현재의 기쁨을 훼손한다.&quot;<br />-레오 버스카글리어-<br />
           <br />&quot;우리가 많은 것을 통제하지 못할 때, 우리는 자기 자신을 통제할 수 있다..&quot;<br />-에픽테토스-</p>
         break;
-      case '🫣':
+      case '😳':
         return <p className={styles.detailfeelcmt} >창피함에 관한 명언은 <br /><br />&quot;창피함을 견디는 사람은 어떠한 상황에서도 더 나은 선택을 할 수 있게 만든다.&quot;<br />-제스 C 스콧-<br />
           <br />&quot;창피함은 결코 실패가 아니라, 배움의 기회이다.&quot;<br />-알렉산더 포프-</p>
         break;
@@ -119,13 +121,9 @@ export default async function Mypage(props: any) {
   return (
     <div className={styles.inner}>
       {
-        session ? <Logout /> : <Login />
+        session == undefined || null ? <Login />  :   <Logout />
       }
-      <Link href={`${session ? '/write' : '/signin'}`}>
-        <FaPencil className={styles.pencil} size="25" />
-      </Link>
-
-      <div className={styles.emp}></div>
+      <Pencil/>
       <p className={styles.ptitle}>당신의 이메일</p>
       <p className={styles.uemail}>
         {usermail}
@@ -142,7 +140,7 @@ export default async function Mypage(props: any) {
         <p className={styles.feelingcnt}>😭 {cutarr(feel, '😭')}</p>
         <p className={styles.feelingcnt}>🤕 {cutarr(feel, '🤕')}</p>
         <p className={styles.feelingcnt}>🤯 {cutarr(feel, '🤯')}</p>
-        <p className={styles.feelingcnt}>🫣 {cutarr(feel, '🫣')}</p>
+        <p className={styles.feelingcnt}>😳 {cutarr(feel, '😳')}</p>
         <p className={styles.feelingcnt}>🥳 {cutarr(feel, '🥳')}</p>
         <p className={styles.feelingcnt}>🥰 {cutarr(feel, '🥰')}</p>
         <p className={styles.feelingcnt}>🤩 {cutarr(feel, '🤩')}</p>

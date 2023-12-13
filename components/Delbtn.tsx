@@ -26,7 +26,7 @@ export default function Delbtn(props:any) {
         alert("글 수정, 삭제는 본인만이 가능합니다.")
       }
 
-     }} className={styles.modifyp}>삭제 ⌫</button>
+     }} className={styles.del}>삭제 ⌫</button>
     </div>
   )
 }

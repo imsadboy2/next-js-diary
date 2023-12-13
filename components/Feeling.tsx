@@ -48,10 +48,10 @@ export default function Feeling(props:any) {
               🤯
             </p>
             <p
-              className={`${styles.emoji} ${feeling === '🫣' ? styles.selected : ''}`}
-              onClick={() => handleEmojiClick('🫣')}
+              className={`${styles.emoji} ${feeling === '😳' ? styles.selected : ''}`}
+              onClick={() => handleEmojiClick('😳')}
             >
-              🫣
+              😳
             </p>
             <p
               className={`${styles.emoji} ${feeling === '🥳' ? styles.selected : ''}`}

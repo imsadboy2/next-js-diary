@@ -18,6 +18,7 @@ time, mark, audio, video {
     font-size: 100%;
     font: inherit;
     vertical-align: baseline;
+    font-weight: 600;
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -47,17 +48,3 @@ a {
     text-decoration: none;
     cursor: pointer;
 }
-.pencil {
-    cursor: pointer;
-    position: fixed;
-    bottom: 50px;
-    right: 50px;
-    color: rgba(27, 27, 27, 0.639);
-    transition: all 0.5s;
-    
-  }
-  
-  .pencil:hover{
-    color: rgba(35, 35, 35, 0.834);
-    transform: scale(1.3);
-  }

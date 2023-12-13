@@ -26,18 +26,6 @@
   text-align: center;
   
 }
-.article:hover {
- transform: scale(1.05);
-}
-.article::after {
-  width: 105%;
-  content: "";
-  display: block;
-  border-top: 0.5px solid rgba(27, 27, 27, 0.403);
-  margin-top: 10px;
-  margin-left: -2.5%;
-  margin-right: -2.5%;
-}
 
 .articletitle {
   font-size: 20px;
@@ -91,6 +79,30 @@
     position: relative;
     top: 45px;
  
+    font-family: 'Grandiflora One', cursive;
+  }
+}
+
+@media screen and (min-width: 1450px){
+  .articletitle {
+    font-size: 35px;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .content {
+    text-align: center;
+    line-height: 40px;
+    font-size: 25px;
+  }
+  .articleinner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 200px;
+    margin-top: 60px;
     font-family: 'Grandiflora One', cursive;
   }
 }

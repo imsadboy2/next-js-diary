@@ -50,7 +50,7 @@ export default function Searchlist() {
   return (
     <div className={styles.articleinner}>
       {
-        session? <Logout/>  : <Login/>
+        session.data == undefined || null ? <Login />  :   <Logout />
       }
       <Link href={`${session ? '/write' : '/signin'}`}>
         <FaPencil className={styles.pencil} size="25" />

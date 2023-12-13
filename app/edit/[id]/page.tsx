@@ -9,10 +9,15 @@ import { useEffect, useState, ChangeEvent } from 'react'
 import axios from 'axios'
 import Imgupload from '@/components/Imgupload'
 import { useSelector } from 'react-redux'
+import { useSession } from 'next-auth/react'
 
 export default function Edit(props: any) {
   const previmgurl = useSelector((state:any)=> state.imgurl)
   
+
+  const session = useSession();
+
+  const curuser = session.data?.user?.email
 
   const [result, setResult] = useState<any>()
 
@@ -115,7 +120,7 @@ export default function Edit(props: any) {
             <option value="😭">😭</option>
             <option value="🤕">🤕</option>
             <option value="🤯">🤯</option>
-            <option value="🫣">🫣</option>
+            <option value="😳">😳</option>
             <option value="🥳">🥳</option>
             <option value="🥰">🥰</option>
             <option value="🤩">🤩</option>
@@ -128,7 +133,7 @@ export default function Edit(props: any) {
         <div className={styles.fourth}>
           <p className={styles.contenttitle}>이날은 이런 하루를 보내셨군요.</p>
           {
-          result?.imgurl == ''? null : <img className={styles.curimg} src={result?.imgurl} width={300}/>
+          result?.imgurl == ''? null : <img className={styles.curimg} src={result?.imgurl} />
         }
           <div className={styles.contentinner}>
           <textarea onChange={handlelengthContent} value={lenContent} name='content' className={`${styles.content} ${styles.publicinput}`}/>
@@ -137,10 +142,12 @@ export default function Edit(props: any) {
 
         <div className={styles.modifyinner}>
           <button type='submit' className={styles.modifyp}>✎ 수정완료</button>
-          <Delbtn _id={(result as any)?._id}/>
+          <Delbtn _id={(result as any)?._id} curuser={curuser} result={result as any} />
         </div>
       </form>
+      <div style={{marginRight : 16}}>
       <Imgupload previmgurl = {result?.imgurl}/>
+      </div>
     </div>
   )
 }

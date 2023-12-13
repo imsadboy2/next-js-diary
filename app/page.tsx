@@ -8,6 +8,7 @@ import { getServerSession } from 'next-auth';
 import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import Login from '@/components/Login';
 import Logout from '@/components/Logout';
+import Pencil from '@/components/Pencil';
 
 
 
@@ -22,7 +23,7 @@ export default async function Home() {
   let revers = copy.sort((a,b)=> b.srtfordate - a.srtfordate)
   let last = revers.slice(0,10)
 
-  
+
 
 
   return (
@@ -32,17 +33,15 @@ export default async function Home() {
         last.map((e, i)=>{
           return(
             <Link key={i} href={`detail/${revers[i]._id}`}>
-              <p className={styles.article}> {e.title} </p>
+              <p className={styles.article}> {e.title.length > 31 ? e.title.slice(0,30) + ' ...' : e.title} </p>
             </Link>
           )
         })
       }
       {
-        session? <Logout/>  : <Login/>
+        session == undefined || null ? <Login />  :   <Logout />
       }
-      <Link  href={`${session? '/write' : '/signin'}`}>
-       <FaPencil className={styles.pencil} size="25" />
-      </Link>
+      <Pencil/>
     </div>
   )
 }

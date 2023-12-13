@@ -261,6 +261,7 @@
   margin-bottom: 30px;
   border-radius: 10px;
   box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.217);
+  width: 300px;
 }
 
 
@@ -532,6 +533,13 @@
 }
 
 @media screen and (max-width: 576px ){
+  .articletitle {
+    font-size: 15px;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+    padding: 0 10px;
+    text-align: center;
+  }
   .content {
     position: relative;
     width: 330px;
@@ -566,4 +574,260 @@
     transition: all 0.5s;
     
   }
+}
+
+@media screen and (min-width: 1450px) {
+
+.inner {
+  position: relative;
+  top: 103px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 50px;
+  font-family: 'Grandiflora One', cursive;
+}
+
+
+.dateinner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.datetitle {
+  font-size: 25px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+.articledate {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.addtitle {
+  font-size: 25px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+.articletitle {
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+
+.titleinput {
+  vertical-align: top;
+}
+
+.second {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.emojiinner {
+  display: flex;
+}
+.emoji {
+  font-size: 35px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.emoji:hover {
+ transform: scale(1.2) rotate(360deg);
+}
+.feelingtitle {
+  font-size: 25px;
+  margin-bottom: 30px;
+  vertical-align: middle;
+}
+
+.third {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.weathertitle {
+  font-size: 25px;
+  margin-bottom: 10px;
+  vertical-align: middle;
+}
+.weather{
+  font-size: 70px;
+  animation: doridori 2s infinite normal;
+  animation-timing-function: step-end;
+}
+
+
+@keyframes doridori {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(20deg);
+  }
+
+  50% {
+    transform: rotate(-0deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+
+}
+
+.fourth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.contenttitle {
+  font-size: 25px;
+  margin-bottom: 20px;
+  vertical-align: middle;
+}
+
+.content {
+  position: relative;
+  width: 620px;
+  height: 320px;
+  resize: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  white-space: pre-wrap;
+  overflow-y: scroll;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+  letter-spacing: 1.3px;
+  line-height: 1.1;
+  right: 10px;
+  word-wrap: break-word;
+  font-size: 20px;
+}
+.content::-webkit-scrollbar {
+  width: 8px;
+}
+.content::-webkit-scrollbar-thumb {
+  background-color: #2f3542;
+  border-radius: 10px;
+  background-clip: padding-box;
+  border: 1.5px solid transparent;
+}
+.content::-webkit-scrollbar-track {
+  background-color: rgba(224, 224, 224, 0.811);
+  border-radius: 10px;
+}
+.contentinner {
+  width: 620px;
+  height: 320px;
+  margin-bottom: 50px;
+}
+
+.addcommentinner {
+  position: relative;
+  display: flex;
+  width: 900px;
+  justify-content: flex-start;
+}
+.addcomment {
+  resize: none;
+  width: 513px;
+  height: 100px;
+  margin-bottom: 10px;
+  outline-color: rgba(86, 86, 86, 0.629);
+  border-radius: 5px;
+  border: 1px solid #565656a7;
+  padding: 10px;
+  font-family: 'Grandiflora One', cursive;
+  letter-spacing: 1.3px;
+  line-height: 1.1;
+}
+.addcmtwriter {
+  margin-right: 30px;
+  margin-left: 70px; 
+}
+
+.addcmtbtn  {
+  position: relative;
+  left: 241px;
+  margin-bottom: 30px;
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'Grandiflora One', cursive;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.483);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.exsitedcmt {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 3.5fr 1fr;
+  width: 900px;
+  justify-content: flex-start;
+}
+.excomment {
+  margin-bottom: 40px;
+  /* white-space: pre-wrap; */
+  text-wrap: balance;
+  letter-spacing: 1.3px;
+  line-height: 1.1;
+  text-align: left;
+}
+.excmtwriter {
+  margin-left: 70px; 
+  margin-top: 5px;
+}
+
+.modifyinner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+  width: 638px;
+  top: -10px;
+}
+.modifyp{
+  font-size: 13px;
+  cursor: pointer;
+  font-family: 'Grandiflora One', cursive;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.483);
+  text-align: center;
+  vertical-align: middle;
+}
+
+.curimg {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.217);
+  width: 474px;
+}
+
+
 }

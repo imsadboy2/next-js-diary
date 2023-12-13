@@ -25,7 +25,7 @@ export default function ModiComment(props: any) {
       .then((result) => {
         setLoadcmt(result)
         const temp = result.find((i: { _id: any; }) => i._id == props.cmtid)
-        setModifycmt(temp.content)
+        setModifycmt(temp?.content)
       })
 
   }, [shouldRefresh])
@@ -136,6 +136,7 @@ export default function ModiComment(props: any) {
                   ).then(()=>{
                     setShouldRefresh(!shouldRefresh);
                     alert('댓글이 삭제되었습니다.')
+                    router.push(`/detail/${props._id}`)
                   })
                   }}
                   >삭제 ⌫</button>

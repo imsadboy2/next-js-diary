@@ -28,3 +28,15 @@
     display: none;
   }
 }
+
+@media screen and (min-width: 1450px) {
+  .pencil {
+    cursor: pointer;
+    position: fixed;
+    bottom: 50px;
+    right: 37px;
+    color: rgba(27, 27, 27, 0.639);
+    transition: all 0.5s;
+    
+  }
+}

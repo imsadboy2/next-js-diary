@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Grandiflora+One&display=swap');
 
 .inner {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: 'Grandiflora One', cursive;
+  top: 200px;
 }
 
 .pencil {
@@ -20,9 +22,6 @@
 .pencil:hover{
   color: rgba(35, 35, 35, 0.834);
   transform: scale(1.3);
-}
-.emp {
-  height: 200px;
 }
 .ptitle {
   font-size: 20px;
@@ -73,15 +72,17 @@
   transform: scale(1.2);
 }
 
-@media screen and (max-width: 768px ){
+@media screen and (max-width: 1024px ){
+  .inner{
+    top: 433px;
+  }
   .pencil {
     cursor: pointer;
     position: fixed;
     bottom: 50px;
-    right: 20px;
+    right: 50px;
     color: rgba(27, 27, 27, 0.639);
     transition: all 0.5s;
-    
   }
   
   .pencil:hover{
@@ -139,6 +140,9 @@
 }
 
 @media screen and (max-width: 576px ){
+  .inner {
+    top: 200px;
+  }
   .pencil {
     cursor: pointer;
     position: fixed;
@@ -153,4 +157,46 @@
     color: rgba(35, 35, 35, 0.834);
     transform: scale(1.3);
   }
+}
+@media screen and (min-width: 1450px) {
+  .inner{
+    top:308px;
+  }
+  .ptitle {
+    font-size: 25px;
+    margin-bottom: 15px;
+  }
+  .uemail{
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+  .cnttitle{
+    font-size: 25px;
+    margin-bottom: 40px;
+  }
+  .myarticle {
+    font-size: 30px;
+    text-decoration: underline;
+    text-decoration-thickness: 0.5px;
+    text-underline-offset: 8px;
+    transition: all 0.3s;
+    width: 43px;
+    height: 35px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bolder;
+  }
+  .feelingcnt {
+    font-size: 35px;
+    display: block;
+    margin: 10px 10px;
+  }
+  .detailfeelcmt{
+    width: 424px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 23px;
+    word-wrap: break-word;
+  }
+
 }

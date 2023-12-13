@@ -20,11 +20,13 @@
   align-items: center;
   margin-top: 30px;
 }
+
 .datetitle {
-  font-size: 15px;
+  font-size: 20px;
   margin-bottom: 10px;
   vertical-align: middle;
 }
+
 .articledate {
   font-size: 15px;
   vertical-align: middle;
@@ -37,11 +39,13 @@
   align-items: center;
   margin-top: 30px;
 }
+
 .addtitle {
-  font-size: 15px;
+  font-size: 20px;
   margin-bottom: 10px;
   vertical-align: middle;
 }
+
 .articletitle {
   font-size: 15px;
   vertical-align: middle;
@@ -59,19 +63,23 @@
   align-items: center;
   margin-top: 30px;
 }
+
 .emojiinner {
   display: flex;
 }
+
 .emoji {
-  font-size: 25px;
+  font-size: 35px;
   cursor: pointer;
   transition: all 0.5s;
 }
+
 .emoji:hover {
- transform: scale(1.2) rotate(360deg);
+  transform: scale(1.2) rotate(360deg);
 }
+
 .feelingtitle {
-  font-size: 15px;
+  font-size: 20px;
   margin-bottom: 30px;
   vertical-align: middle;
 }
@@ -83,13 +91,15 @@
   align-items: center;
   margin-top: 30px;
 }
+
 .weathertitle {
-  font-size: 15px;
+  font-size: 20px;
   margin-bottom: 10px;
   vertical-align: middle;
 }
-.weather{
-  font-size: 50px;
+
+.weather {
+  font-size: 60px;
   animation: doridori 2s infinite normal;
   animation-timing-function: step-end;
 }
@@ -107,9 +117,11 @@
   50% {
     transform: rotate(-0deg);
   }
+
   75% {
     transform: rotate(-20deg);
   }
+
   100% {
     transform: rotate(0deg);
   }
@@ -126,7 +138,7 @@
 }
 
 .contenttitle {
-  font-size: 15px;
+  font-size: 20px;
   margin-bottom: 20px;
   vertical-align: middle;
 }
@@ -144,20 +156,25 @@
   letter-spacing: 1.3px;
   line-height: 1.1;
   right: 10px;
+  word-wrap: break-word;
 }
+
 .content::-webkit-scrollbar {
   width: 8px;
 }
+
 .content::-webkit-scrollbar-thumb {
   background-color: #2f3542;
   border-radius: 10px;
   background-clip: padding-box;
   border: 1.5px solid transparent;
 }
+
 .content::-webkit-scrollbar-track {
   background-color: rgba(224, 224, 224, 0.811);
   border-radius: 10px;
 }
+
 .contentinner {
   width: 500px;
   height: 250px;
@@ -170,6 +187,7 @@
   width: 900px;
   justify-content: flex-start;
 }
+
 .addcomment {
   resize: none;
   width: 513px;
@@ -183,12 +201,13 @@
   letter-spacing: 1.3px;
   line-height: 1.1;
 }
+
 .addcmtwriter {
   margin-right: 30px;
-  margin-left: 70px; 
+  margin-left: 70px;
 }
 
-.addcmtbtn  {
+.addcmtbtn {
   position: relative;
   left: 241px;
   margin-bottom: 30px;
@@ -209,6 +228,7 @@
   width: 900px;
   justify-content: flex-start;
 }
+
 .excomment {
   margin-bottom: 40px;
   /* white-space: pre-wrap; */
@@ -217,8 +237,9 @@
   line-height: 1.1;
   text-align: left;
 }
+
 .excmtwriter {
-  margin-left: 70px; 
+  margin-left: 70px;
   margin-top: 5px;
 }
 
@@ -231,7 +252,8 @@
   width: 515px;
   top: -10px;
 }
-.modifyp{
+
+.modifyp {
   font-size: 13px;
   cursor: pointer;
   font-family: 'Grandiflora One', cursive;
@@ -240,4 +262,154 @@
   border: 1px solid rgba(0, 0, 0, 0.483);
   text-align: center;
   vertical-align: middle;
+}
+
+.curimg {
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.217);
+  width: 300px;
+}
+
+
+
+
+@media screen and (max-width: 576px) {
+  .articletitle{
+    padding: 0 10px;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+  .content {
+    position: relative;
+    width: 339px;
+    height: 250px;
+    resize: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    overflow-y: scroll;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1.3px;
+    line-height: 1.1;
+    right: 3px;
+  }
+  .modifyinner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    position: relative;
+    width: 355px;
+    top: -17px;
+  }
+  .contentinner {
+    width: 350px;
+    height: 250px;
+    margin-bottom: 50px;
+  }
+
+}
+
+
+@media screen and (min-width: 1450px) {
+
+  .inner {
+    position: relative;
+    top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 50px;
+    font-family: 'Grandiflora One', cursive;
+  }
+
+  .datetitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+  }
+
+  .addtitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+  }
+
+  .feelingtitle {
+    font-size: 25px;
+    margin-bottom: 30px;
+    vertical-align: middle;
+  }
+
+  .weathertitle {
+    font-size: 25px;
+    margin-bottom: 10px;
+    vertical-align: middle;
+  }
+
+  .contenttitle {
+    font-size: 25px;
+    margin-bottom: 20px;
+    vertical-align: middle;
+  }
+
+  .articledate {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  .articletitle {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  .emoji {
+    font-size: 35px;
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+
+  .content {
+    position: relative;
+    width: 620px;
+    height: 320px;
+    resize: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    white-space: pre-wrap;
+    overflow-y: scroll;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: 1.3px;
+    line-height: 1.1;
+    right: 68px;
+    word-wrap: break-word;
+    font-size: 20px;
+  }
+
+  .modifyinner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 80px;
+    position: relative;
+    width: 638px;
+    top: 61px;
+  }
+
+  .addcommentinner {
+    position: relative;
+    display: flex;
+    width: 900px;
+    justify-content: flex-start;
+    top: 65px;
+  }
+
+  .curimg {
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px 3px rgba(0, 0, 0, 0.217);
+    width: 474px;
+  }
 }

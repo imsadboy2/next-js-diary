@@ -6,7 +6,7 @@ import { FaArrowRightFromBracket, FaPersonWalkingDashedLineArrowRight} from "rea
 import { useEffect, useState } from "react";
 
 export default function Logout() {
-
+const viewsize = window.innerWidth
 const [scrollY, setScrollY] = useState(0);
 
 const handleScroll = () => {
@@ -26,8 +26,10 @@ const handleScroll = () => {
     <div>
       <button className={`${styles.logout} ${scrollY >= maxScroll ? styles.kill : ''}`} 
         style={{ opacity: calculatedOpacity }}
-       onClick={() => { signOut() }} > 
-        <FaPersonWalkingDashedLineArrowRight size='25'/>
+       onClick={() => { signOut({ redirect: true, callbackUrl: '/' }) }} > 
+        <FaPersonWalkingDashedLineArrowRight 
+        size={viewsize >= 1450 ? '35' : '25'}
+        />
       </button>
     </div>
   )
