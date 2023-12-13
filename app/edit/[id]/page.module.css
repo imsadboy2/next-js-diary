@@ -58,6 +58,7 @@
   border-radius: 5px;
   border: 1px solid #565656a7;
   font-family: 'Grandiflora One', cursive;
+  font-weight: 600;
 }
 
 .second {
@@ -164,6 +165,7 @@
   border-radius: 5px;
   border: 1px solid #565656a7;
   font-family: 'Grandiflora One', cursive;
+  font-weight: 600;
 }
 
 .contentinner {
@@ -250,6 +252,7 @@
   border: 1px solid rgba(0, 0, 0, 0.483);
   text-align: center;
   vertical-align: middle;
+  font-weight: 600;
 }
 
 .titleinput {

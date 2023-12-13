@@ -11,6 +11,7 @@
   position: relative;
   left: -95px;
   top: -17px;
+  font-weight: 600;
 }
 
 .imginput[type="file"]::file-selector-button{
@@ -20,6 +21,7 @@
   background-color: white;
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.483);
+  font-weight: 600;
 }
 
 .curimg {

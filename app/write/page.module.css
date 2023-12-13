@@ -32,6 +32,7 @@
   border-radius: 5px;
   border: 1px solid #565656a7;
   height: 20px;
+  font-weight: 600;
 }
 
 .second {
@@ -135,7 +136,7 @@
   outline-color: rgba(86, 86, 86, 0.629);
   border-radius: 5px;
   border: 1px solid #565656a7;
-
+  font-weight: 600;
 }
 
 .submitbtn {
