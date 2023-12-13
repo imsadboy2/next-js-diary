@@ -7,7 +7,7 @@ import { useSession } from "next-auth/react";
 
 export default function Pencil() {
   const session = useSession()
-  const viewsize = window.innerWidth
+  const viewsize = typeof window !== 'undefined' ? window.innerWidth : 1440;
 
   const [scrollY, setScrollY] = useState(0);
 
@@ -27,7 +27,6 @@ const handleScroll = () => {
   const baseOpacity = 1;
   const calculatedOpacity = Math.max(baseOpacity - scrollY / maxScroll, 0);
 
-  console.log(session)
 
   return(
     <Link href={`${session.data !== null || undefined ? '/write' : '/signin'} `}>

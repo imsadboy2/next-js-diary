@@ -6,7 +6,7 @@ import { FaArrowRightFromBracket, FaPersonWalkingDashedLineArrowRight} from "rea
 import { useEffect, useState } from "react";
 
 export default function Logout() {
-const viewsize = window.innerWidth
+  const viewsize = typeof window !== 'undefined' ? window.innerWidth : 1440;
 const [scrollY, setScrollY] = useState(0);
 
 const handleScroll = () => {

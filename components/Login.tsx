@@ -9,7 +9,7 @@ import styles from './Login.module.css';
 export default function Login() {
   const [scrollY, setScrollY] = useState(0);
   const dispatch = useDispatch();
-  const viewsize = window.innerWidth
+  const viewsize = typeof window !== 'undefined' ? window.innerWidth : 1440;
 
   const handleScroll = () => {
     setScrollY(window.scrollY);

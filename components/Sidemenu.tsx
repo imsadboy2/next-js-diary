@@ -10,7 +10,8 @@ export default function Sidemenu() {
   const menuRef = useRef<any>(null);
   const session = useSession();
   const [scrollY, setScrollY] = useState(0);
-  const viewsize = window.innerWidth
+  const viewsize = typeof window !== 'undefined' ? window.innerWidth : 1440;
+
 
 
   useEffect(() => {
