@@ -81,6 +81,9 @@ export default async function Mypage(props: any) {
 
   const detailfeelcmt = () => {
     switch (setgrefeel) {
+      case '':
+        return <p className={styles.detailfeelcmt} ></p>
+        break;
       case '🤬':
         return <p className={styles.detailfeelcmt} >분노에 관한 명언은 <br /><br />&quot;노여움은 가끔 도덕과 용기의 무기가 된다.&quot;<br />-아리스토텔레스-<br />
           <br />&quot;원한은 원한으로 갚는다고 풀어지지 않으리니 원한은 버릴때에만 풀리리라.&quot;<br />-석가모니-</p>

@@ -53,7 +53,7 @@ export default function Mypost(props: any) {
       <Link href={`${session ? '/write' : '/signin'}`}>
         <FaPencil className={styles.pencil} size="25" />
       </Link>
-      <p className={styles.articletitle}>모든 이야기들</p>
+      <p className={styles.articletitle}>나의 이야기들</p>
       <Pagination
         data={data}
         itemsPerPage={10}

@@ -33,7 +33,7 @@ export default async function Home() {
         last.map((e, i)=>{
           return(
             <Link key={i} href={`detail/${revers[i]._id}`}>
-              <p className={styles.article}> {e.title.length > 31 ? e.title.slice(0,30) + ' ...' : e.title} </p>
+              <p className={styles.article}> {e.title.length > 30 ? e.title.slice(0,30) + ' ...' : e.title} </p>
             </Link>
           )
         })

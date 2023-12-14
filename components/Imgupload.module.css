@@ -28,6 +28,7 @@
   margin: 10px 0px;
   position: relative;
   left: -95px;
+  top:-16px;
 }
 
 @media screen and (max-width: 1024px){
