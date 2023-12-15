@@ -3,8 +3,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./Pagination.module.css";
 import Link from "next/link";
-import { ObjectId } from "mongodb";
-import Search from "./Search";
 
 const Pagination = ({ data, itemsPerPage, onPageChange }: any) => {
   const [currentPage, setCurrentPage] = useState(1);

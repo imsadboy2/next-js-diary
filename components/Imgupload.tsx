@@ -1,5 +1,5 @@
 'use client'
-import { ChangeEvent, useEffect, useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 import { storage } from '../util/firebase'
 import { getDownloadURL, ref, uploadBytes } from 'firebase/storage'
 import { useDispatch, useSelector } from 'react-redux';

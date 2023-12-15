@@ -3,8 +3,6 @@
 import { ChangeEvent, useEffect, useState } from 'react'
 import styles from './ModiComment.module.css'
 import { useSession } from 'next-auth/react';
-import axios from 'axios';
-import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 

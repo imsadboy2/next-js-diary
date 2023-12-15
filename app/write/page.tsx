@@ -2,11 +2,7 @@
 import { ChangeEvent, useEffect, useRef, useState } from 'react'
 import styles from './page.module.css'
 import axios from 'axios'
-import Image from 'next/image'
 import { useSession } from 'next-auth/react'
-import type { PutBlobResult } from '@vercel/blob'
-import { initializeApp } from 'firebase/app'
-import { getStorage, ref, uploadBytes } from 'firebase/storage'
 import Imgupload from '@/components/Imgupload'
 import { useSelector } from 'react-redux'
 

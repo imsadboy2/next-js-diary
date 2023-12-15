@@ -1,7 +1,6 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styles from './Feeling.module.css'
-import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { changeFeel } from '@/src/store'
 

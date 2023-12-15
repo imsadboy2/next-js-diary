@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { FaBars } from 'react-icons/fa6';
 import styles from './Sidemenu.module.css';
 import Link from 'next/link';
-import { SessionProvider, useSession } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 
 export default function Sidemenu() {
   const [mainbars, setMainbars] = useState(false);

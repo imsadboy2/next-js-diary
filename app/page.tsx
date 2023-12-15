@@ -1,7 +1,6 @@
 
 import styles from './page.module.css';
 import './globals.css'
-import { FaPencil, FaBars } from "react-icons/fa6"
 import Link from 'next/link';
 import {connectDB} from '../util/database'
 import { getServerSession } from 'next-auth';

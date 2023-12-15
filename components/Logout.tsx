@@ -1,8 +1,8 @@
 'use client'
 
-import { signIn, signOut } from "next-auth/react"
+import { signOut } from "next-auth/react"
 import styles from './Logout.module.css'
-import { FaArrowRightFromBracket, FaPersonWalkingDashedLineArrowRight} from "react-icons/fa6"
+import { FaPersonWalkingDashedLineArrowRight} from "react-icons/fa6"
 import { useEffect, useState } from "react";
 
 export default function Logout() {

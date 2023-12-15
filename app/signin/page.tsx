@@ -1,9 +1,7 @@
 "use client";
-import React, { useRef, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { getProviders, signIn } from "next-auth/react";
 import styles from './page.module.css'
-import Image from 'next/image'
-import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 
 

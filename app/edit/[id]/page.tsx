@@ -1,9 +1,6 @@
 'use client'
 
-import { connectDB } from '@/util/database'
 import styles from './page.module.css'
-import { ObjectId } from 'mongodb'
-import Feeling from '@/components/Feeling'
 import Delbtn from '@/components/Delbtn'
 import { useEffect, useState, ChangeEvent } from 'react'
 import axios from 'axios'

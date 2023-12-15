@@ -1,5 +1,4 @@
 "use client"
-import axios, { AxiosRequestConfig } from 'axios'
 import styles from './Delbtn.module.css'
 import { useRouter } from 'next/navigation';
 

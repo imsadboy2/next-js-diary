@@ -1,15 +1,12 @@
 "use client"
 import styles from './page.module.css';
-import { FaPencil, FaBars } from "react-icons/fa6"
+import { FaPencil } from "react-icons/fa6"
 import Link from 'next/link';
-import { getServerSession } from 'next-auth';
-import { authOptions } from '@/pages/api/auth/[...nextauth]';
 import Login from '@/components/Login';
 import Logout from '@/components/Logout';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
-import ReactPaginate from 'react-paginate';
 import Pagination from '@/components/Pagination';
 import Search from '@/components/Search';
 

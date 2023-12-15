@@ -1,6 +1,5 @@
 import { connectDB } from '@/util/database'
 import styles from './page.module.css'
-import { ObjectId } from 'mongodb'
 import Chart from '@/components/Chart'
 import Link from 'next/link'
 import { FaPencil } from 'react-icons/fa6'

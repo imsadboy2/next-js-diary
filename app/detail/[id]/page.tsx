@@ -1,7 +1,6 @@
 import { connectDB } from '@/util/database'
 import styles from './page.module.css'
 import { ObjectId } from 'mongodb'
-import Link from 'next/link'
 import Delbtn from '@/components/Delbtn'
 import { getServerSession } from 'next-auth'
 import { authOptions } from '@/pages/api/auth/[...nextauth]'
@@ -9,7 +8,6 @@ import Modybtn from '@/components/Modybtn'
 import Comment from '@/components/Comment'
 import Logout from '@/components/Logout'
 import Login from '@/components/Login'
-import { FaPencil } from 'react-icons/fa6'
 import Pencil from '@/components/Pencil'
 
 export default async function Detail(props: any) {

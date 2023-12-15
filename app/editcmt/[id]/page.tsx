@@ -1,14 +1,9 @@
 
 'use client'
-import { connectDB } from '@/util/database'
+
 import styles from './page.module.css'
-import { ObjectId } from 'mongodb'
-import Link from 'next/link'
 import Delbtn from '@/components/Delbtn'
-import { getServerSession } from 'next-auth'
-import { authOptions } from '@/pages/api/auth/[...nextauth]'
 import Modybtn from '@/components/Modybtn'
-import Comment from '@/components/Comment'
 import { useSession } from 'next-auth/react'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
